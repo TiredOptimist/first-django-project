@@ -7,3 +7,4 @@ class TodoListConfig(AppConfig):
     verbose_name = "ToDo List"
 
 
+
