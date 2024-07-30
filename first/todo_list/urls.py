@@ -12,7 +12,7 @@ urlpatterns = [
     path("list/", views.ToDoListView.as_view(), name="list"),
     path("done/", views.ToDoListDoneView.as_view(), name="done"),
     path("<int:pk>/", views.ToDoDetailView.as_view(), name="detail"),
-    path('add_todo_item/', views.add_todo_item, name='add_todo_item'),
+    path('add_todo_item/', views.Add_todo_item, name='add_todo_item'),
 
 
 ]

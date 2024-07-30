@@ -29,12 +29,13 @@ class ToDoDetailView(DetailView):
     model = ToDoItem
 
 
-def add_todo_item(request):
+def Add_todo_item(request):
     if request.method == 'POST':
         form = ToDoItemForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('todo_list')
+            return redirect('todo_list:index')
     else:
         form = ToDoItemForm()
-    return render(request, 'add_todo_item.html', {'form': form})
+    return render(request, 'todo_list/add_todo_item.html', {'form': form})
+
