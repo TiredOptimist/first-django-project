@@ -1,6 +1,8 @@
-<nav>
-  <ul>
-    <li><a href="{% url 'index' %}">Home</a></li>
-    <li><a href="{% url 'todo_list:index' %}">ToDo List</a></li>
-  </ul>
+<nav class="navbar navbar-expand-sm navbar-light shadow-lg p-3 mb-5 bg-body-tertiary rpunded">
+  <div class="container-fluid">
+    <div class="navbar-nav">
+      <a class="nav-link" aria-current="page" href="{% url 'index' %}">Home</a>
+      <a class="nav-link" aria-current="page" href="{% url 'todo_list:index' %}">To do list</a>
+    </div>
+  </div>
 </nav>
