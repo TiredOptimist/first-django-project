@@ -1,15 +1,18 @@
 {% extends 'todo_list/base.html' %}
 
 {% block title %}
-  ToDo List APP
+  ToDo List 
 {% endblock title %}
 
 {% block body %}
-  <h1>ToDo List App</h1>
+  <h1>ToDo List</h1>
   <ul>
   <li><a href="{% url 'todo_list:list' %}">All ToDo Items</a></li>
-  <li><a href="{% url 'todo_list:done' %}">You have to do:</a></li>
+  <li><a href="{% url 'todo_list:done' %}">You have to do</a></li>
+  <li> <a href="{% url 'add_todo_item' %}">Add a new ToDo</a>
+  </li>
   </ul>
+ 
   <h2>Your last ToDos:</h2>
    {% include 'todo_list/components/todo_items_list.html' %}
 {% endblock body %}
