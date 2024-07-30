@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpRequest, HttpResponse
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, View
 from .forms import ToDoItemForm
 from .models import ToDoItem
 
@@ -29,13 +29,17 @@ class ToDoDetailView(DetailView):
     model = ToDoItem
 
 
-def Add_todo_item(request):
-    if request.method == 'POST':
+class Add_todo_item(View):
+    template_name = 'todo_list/add_todo_item.html'
+
+    def get(self, request):
+        form = ToDoItemForm()
+        return render(request, self.template_name, {'form': form})
+
+    def post(self, request):
         form = ToDoItemForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('todo_list:index')
-    else:
-        form = ToDoItemForm()
-    return render(request, 'todo_list/add_todo_item.html', {'form': form})
+        return render(request, self.template_name, {'form': form})
 
