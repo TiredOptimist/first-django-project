@@ -10,4 +10,7 @@
     <div>Заголовок: <strong>{{ object.title }}</strong></div>
     <div>Статус: <strong>{{ object.done }}</strong></div>
   </div>
+<div class="prev mb-1">
+  <a class="btn btn-warning m-2" href="{% url 'todo_list:index' %}">Назад</a>
+</div>
 {% endblock body %}

@@ -5,7 +5,13 @@
 {% endblock title %}
 
 {% block body %}
-  
-  <h3>Дела-Делишки:</h3>
-  {% include 'todo_list/components/todo_items_list.html' %}
+  <div class="mb-4">
+    <div class="m-2">
+      <h3>Дела-Делишки:</h3>
+      {% include 'todo_list/components/todo_items_list.html' %}
+    </div>
+  </div>
+<div class="prev mb-1">
+  <a class="btn btn-warning m-2" href="{% url 'todo_list:index' %}">Назад</a>
+</div>
 {% endblock body %}
