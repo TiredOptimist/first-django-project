@@ -12,7 +12,7 @@
         {% if todo_item.id %}
         <form action="{% url 'todo_list:delete_todo' todo_item.id %}" method="post">
           {% csrf_token %}
-          <button type="submit" class="btn btn-info">Удалить</button>
+          <button type="submit" class="btn btn-danger mt-1 mb-3">Удалить</button>
         </form>
         {% endif %}
       </li>
