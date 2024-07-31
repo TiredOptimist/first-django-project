@@ -1,7 +1,7 @@
 {% extends 'todo_list/base.html' %}
 
 {% block title %}
-  ToDo List 
+  Дела-Делишки
 {% endblock title %}
 
 {% block body %}
@@ -10,16 +10,17 @@
     <div class="content m-2">
 
       <div class="todo_list mb-5">
-              <h1>ToDo List</h1>
+              <h1>#ТВОИ ДЕЛА-ДЕЛИШКИ#</h1>
         <ul>
-          <li><a href="{% url 'todo_list:list' %}">All ToDo Items</a></li>
-          <li><a href="{% url 'todo_list:done' %}">You have to do</a></li>
-          <li><a href="{% url 'todo_list:add_todo_item' %}">Add a new ToDo</a></li>
+          <li><a href="{% url 'index' %}">Назад</a></li>
+          <li><a href="{% url 'todo_list:list' %}">Полный список дел</a></li>
+          <li><a href="{% url 'todo_list:done' %}">Список невыполненных дел</a></li>
+          <li><a href="{% url 'todo_list:add_todo_item' %}">Добавить новую задачу</a></li>
         </ul>
       </div>
 
       <div class="last_todo">
-              <h2>Your last ToDos:</h2>
+              <h2>Новые задачи:</h2>
       {% include 'todo_list/components/todo_items_list.html' %}
       </div>
     </div>
