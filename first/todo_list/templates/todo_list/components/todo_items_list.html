@@ -9,7 +9,12 @@
             🔴
           {% endif %}
         </a>
-        </a>
+        {% if todo_item.id %}
+        <form action="{% url 'todo_list:delete_todo' todo_item.id %}" method="post">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-info">Удалить</button>
+        </form>
+        {% endif %}
       </li>
     {% endfor %}
     

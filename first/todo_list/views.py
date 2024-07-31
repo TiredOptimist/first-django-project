@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpRequest, HttpResponse
 from django.views.generic import ListView, DetailView, View
 from .forms import ToDoItemForm
@@ -30,7 +30,7 @@ class ToDoDetailView(DetailView):
     model = ToDoItem
 
 
-class Add_todo_item(View):
+class AddTodoItem(View):
     template_name = 'todo_list/add_todo_item.html'
 
     def get(self, request):
@@ -44,3 +44,15 @@ class Add_todo_item(View):
             return redirect('todo_list:index')
         return render(request, self.template_name, {'form': form})
 
+
+class DeleteTodoView(View):
+    template_name = 'todo_list/delete_todo.html'
+
+    def post(self, request, todo_id):
+        todo_item = get_object_or_404(ToDoItem, pk=todo_id)
+        todo_item.delete()
+        return redirect('todo_list:index')
+
+    def get(self, request, todo_id):
+        todo_item = get_object_or_404(ToDoItem, pk=todo_id)
+        return render(request, self.template_name, {'todo_item': todo_item})

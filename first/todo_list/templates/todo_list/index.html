@@ -12,7 +12,7 @@
       <div class="todo_list mb-5">
               <h1>#ТВОИ ДЕЛА-ДЕЛИШКИ#</h1>
         <ul>
-          <li><a href="{% url 'index' %}">Назад</a></li>
+          <li><a class="btn btn-warning" href="{% url 'index' %}">Назад</a></li>
           <li><a href="{% url 'todo_list:list' %}">Полный список дел</a></li>
           <li><a href="{% url 'todo_list:done' %}">Список невыполненных дел</a></li>
           <li><a href="{% url 'todo_list:add_todo_item' %}">Добавить новую задачу</a></li>
