@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}
   О нас
@@ -6,9 +7,21 @@
 
 
 {% block body %}
-  <div class="m-2">
-    <h2>TiredOptimist - main Backend Developer</h2>
-    <h2>El_Sacerdot - main Frontend Developer</h2>
+  <div class="row text-center justify-content-center">
+    <div class="col-4 bio_img">
+      <h2>TiredOptimist</h2>
+        <div class="bio_image">
+          <img src="{% static 'img/Sveta.jpg' %}" alt="">
+        </div>
+        <p><h2>Main Backend Developer</h2>        
+    </div>
+    <div class="col-4 bio_img">
+      <h2>El_Sacerdot</h2>
+        <div class="bio_image">
+          <img src="{% static 'img/Nekt.jpg' %}" alt="">
+        </div>
+        <p><h2>Main Frontend Developer</h2>
+    </div>
   </div>
 
 {% endblock body %}

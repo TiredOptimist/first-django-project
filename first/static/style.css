@@ -1,9 +1,117 @@
 /* static/style.css */
 
-body {
+/*main*/
+body{
+    overflow-x: hidden;
     background-color: #f2f2f2;
 }
 
-h1 {
-    color: #00698f;
+#text-main{
+    padding-bottom: 10px;
+}
+
+#btn{
+    background-color: #FCA311;
+    color: #FFFFFF;
+    width: 18%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    cursor: pointer;
+    transition:all 0.15s;
+}
+
+#btn:hover{
+    background-color: #fca211c2;
+}
+
+#btn a{
+    text-decoration: none;
+    color: #fff
+}
+
+.todo_list li{
+    margin-bottom: 5px;
+}
+
+/*todo_list:index*/
+
+#container{
+    margin-left: 10px;
+}
+
+.todo_list a{
+    text-decoration: none;
+    color: #14213D;
+}
+
+
+.last_todo a{
+    text-decoration: none;
+    color: #14213D;
+}
+
+#btn_delete{
+    background-color: black;
+    color: white;
+    margin-top: 7px;
+    width: 120px;
+    margin-bottom: 15px;
+    border-radius: 3px;
+    transition: all 0.2s ease-out;
+}
+
+#btn_delete:hover{
+    background-color: rgb(255, 24, 20) ;
+}
+
+/*add_todo*/
+
+#id_title{
+    margin-top: 50px;
+    width: 500px;
+    height: 40px;
+    border: 1px solid rgb(225, 225, 225);
+    border-radius: 3px;
+}
+
+.container #btn{
+    width: 150px;
+}
+
+/*components todo*/
+
+.cont{
+    margin-left: 30px;
+    margin-right: 40px;
+    margin-bottom: 20px;
+}
+
+.card{
+    margin-top: 20px;
+    margin-bottom: 6px;
+    height: 200px;
+}
+
+.card-body a{
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+}
+
+.card-body #btn_delete{
+    width: 100px;
+    justify-content: start;
+    margin-top: 60px;
+}
+
+/* biography */
+
+.bio_image img{
+    width: 400px;
+    height: 500px;
 }

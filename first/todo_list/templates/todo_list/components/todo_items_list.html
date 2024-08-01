@@ -1,21 +1,31 @@
-<ul>
+<div class="cont">
+  <div class="row">
     {% for todo_item in object_list %}
-    	<li>
-        <a href="{% url 'todo_list:detail' pk=todo_item.pk %}">
-          {{ todo_item.title }}
-          {% if todo_item.done %}
-            🟢
-          {% else %}
-            🔴
+    <div class="col-4">
+      <div class="card">
+        <img src="" alt="" class="card-img-top">
+        <div class="card-body">
+          <a href="{% url 'todo_list:detail' pk=todo_item.pk %}">
+            {{ todo_item.title }}
+            {% if todo_item.done %}
+              🟢
+            {% else %}
+              🔴
+            {% endif %}
+          </a>
+          {% if todo_item.id %}
+          <p class="card-text">Lorem Lorem Lorem</p>
+          <form action="{% url 'todo_list:delete_todo' todo_item.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn" id="btn_delete">Удалить</button>
+          </form>
           {% endif %}
-        </a>
-        {% if todo_item.id %}
-        <form action="{% url 'todo_list:delete_todo' todo_item.id %}" method="post">
-          {% csrf_token %}
-          <button type="submit" class="btn btn-danger mt-1 mb-3">Удалить</button>
-        </form>
-        {% endif %}
-      </li>
+        </div>
+      </div>
+    </div>
     {% endfor %}
-    
-  </ul>
+  </div>
+</div>
+
+
+

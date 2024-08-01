@@ -6,11 +6,10 @@
 
 {% block body %}
 
-  <div class="mb-4">
-    <div class="content m-2">
-
+  <div id="container">
+    <div id="content">
       <div class="todo_list mb-5">
-              <h1>#ТВОИ ДЕЛА-ДЕЛИШКИ#</h1>
+        <h2>#ТВОИ ДЕЛА-ДЕЛИШКИ#</h2>
         <ul>
           <li><a href="{% url 'todo_list:list' %}">Полный список дел</a></li>
           <li><a href="{% url 'todo_list:done' %}">Список невыполненных дел</a></li>
@@ -19,8 +18,8 @@
       </div>
 
       <div class="last_todo">
-              <h2>Новые задачи:</h2>
-      {% include 'todo_list/components/todo_items_list.html' %}
+        <h2>Новые задачи:</h2>
+        {% include 'todo_list/components/todo_items_list.html' %}
       </div>
     </div>
   </div>
