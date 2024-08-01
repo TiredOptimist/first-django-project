@@ -14,7 +14,7 @@
             {% endif %}
           </a>
           {% if todo_item.id %}
-          <p class="card-text">Lorem Lorem Lorem</p>
+          <p class="card-text">{{ todo_item.description }}</p>
           <form action="{% url 'todo_list:delete_todo' todo_item.id %}" method="post">
             {% csrf_token %}
             <button type="submit" class="btn" id="btn_delete">Удалить</button>
