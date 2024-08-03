@@ -18,6 +18,11 @@
               🔴
             {% endif %}
           </a>
+          <button form="toggle-form-{{ todo_item.pk }}" type="submit">Выполнено!</button>
+          <form id="toggle-form-{{ todo_item.pk }}" action="{% url 'todo_list:toggle_done' pk=todo_item.pk %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="done" value="on">
+          </form>
           {% if todo_item.id %}
           <p class="card-text">{{ todo_item.description }}</p>
           {% endif %}

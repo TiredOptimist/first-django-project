@@ -56,3 +56,12 @@ class DeleteTodoView(View):
     def get(self, request, todo_id):
         todo_item = get_object_or_404(ToDoItem, pk=todo_id)
         return render(request, self.template_name, {'todo_item': todo_item})
+
+
+class ToggleDoneView(View):
+
+    def post(self, request, pk):
+        todo_item = ToDoItem.objects.get(pk=pk)
+        todo_item.done = True
+        todo_item.save()
+        return redirect(request.META.get('HTTP_REFERER'))
