@@ -56,17 +56,21 @@ body{
 }
 
 #btn_delete{
-    background-color: black;
-    color: white;
-    margin-top: 7px;
-    width: 120px;
-    margin-bottom: 15px;
-    border-radius: 3px;
-    transition: all 0.2s ease-out;
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    color: black;
+    border: none;
+    background-color: transparent;
+    border-radius: 35%;
+    transition: transform 0.2s ease;
 }
 
 #btn_delete:hover{
-    background-color: rgb(255, 24, 20) ;
+    transform: scale(1.07);
+    background-color: white;
+    transform: rotate(90deg);
+
 }
 
 /*add_todo*/
@@ -77,6 +81,17 @@ body{
     height: 40px;
     border: 1px solid rgb(225, 225, 225);
     border-radius: 3px;
+}
+
+#id_description{
+    width: 500px;
+    height: 80px;
+    border: 1px solid white;
+    border-radius: 3px;
+    overflow: auto;
+    resize: vertical;
+    word-wrap: break-word;
+    display: inline-block;
 }
 
 .container #btn{
@@ -94,7 +109,26 @@ body{
 .card{
     margin-top: 20px;
     margin-bottom: 6px;
-    height: 200px;
+    height: 300px;
+    position: relative;
+    transition: 0.3s;
+    background-color: none;
+}
+
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.card-body{
+    overflow: hidden;
+    width: 220px;
+    word-wrap: break-word;
+    transition: overlflow 0.1s ease-in-out;
+}
+
+.card-body:hover{
+    overflow: auto;
 }
 
 .card-body a{
@@ -106,7 +140,8 @@ body{
 .card-body #btn_delete{
     width: 100px;
     justify-content: start;
-    margin-top: 60px;
+    margin-top: 0px;
+    position: absolute;
 }
 
 /* biography */

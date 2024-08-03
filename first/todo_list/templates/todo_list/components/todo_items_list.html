@@ -1,9 +1,14 @@
+{% load static %}
 <div class="cont">
   <div class="row">
     {% for todo_item in object_list %}
-    <div class="col-4">
+    <div class="col-2">
       <div class="card">
-        <img src="" alt="" class="card-img-top">
+        <img src="{% static 'img/todo.jpg' %}" alt="" class="card-img-top">
+        <form action="{% url 'todo_list:delete_todo' todo_item.id %}" id="form" method="post">
+          {% csrf_token %}
+          <button type="submit" id="btn_delete"><i class="fa fa-close"></i></button>
+        </form>
         <div class="card-body">
           <a href="{% url 'todo_list:detail' pk=todo_item.pk %}">
             {{ todo_item.title }}
@@ -15,10 +20,6 @@
           </a>
           {% if todo_item.id %}
           <p class="card-text">{{ todo_item.description }}</p>
-          <form action="{% url 'todo_list:delete_todo' todo_item.id %}" method="post">
-            {% csrf_token %}
-            <button type="submit" class="btn" id="btn_delete">Удалить</button>
-          </form>
           {% endif %}
         </div>
       </div>
