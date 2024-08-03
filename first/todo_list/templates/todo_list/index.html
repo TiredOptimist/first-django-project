@@ -13,12 +13,13 @@
         <ul>
           <li><a href="{% url 'todo_list:list' %}">Полный список дел</a></li>
           <li><a href="{% url 'todo_list:done' %}">Список невыполненных дел</a></li>
+          <li><a href="{% url 'todo_list:true_done' %}">Список выполненных дел</a></li>
           <li><a href="{% url 'todo_list:add_todo_item' %}">Добавить новую задачу</a></li>
         </ul>
       </div>
 
       <div class="last_todo">
-        <h2>Новые задачи:</h2>
+        <h2>Мой дорогой! Тебе пора выполнять эти задачи:</h2>
         {% include 'todo_list/components/todo_items_list.html' %}
       </div>
     </div>

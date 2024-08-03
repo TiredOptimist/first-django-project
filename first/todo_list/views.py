@@ -15,11 +15,15 @@ def index_view(request: HttpRequest) -> HttpResponse:
 class ToDoListIndexView(ListView):
     template_name = "todo_list/index.html"
     model = ToDoItem
-    queryset = ToDoItem.objects.order_by("-id").all()[:5]
+    queryset = ToDoItem.objects.order_by("-id").filter(done=False).all()[:5]
 
 
 class ToDoListDoneView(ListView):
    queryset = ToDoItem.objects.filter(done=False).all()
+
+
+class ToDoListTrueDoneView(ListView):
+   queryset = ToDoItem.objects.filter(done=True).all()
 
 
 class ToDoListView(ListView):
