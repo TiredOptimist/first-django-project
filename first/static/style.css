@@ -2,9 +2,13 @@
 
 /*main*/
 body{
+    margin-top: 144px;
     overflow-x: hidden;
     background-color: #f2f2f2;
+    /*  добавить блюр при скроле */
 }
+
+
 
 #text-main{
     padding-bottom: 10px;
@@ -124,6 +128,8 @@ body{
     overflow: hidden;
     width: 220px;
     word-wrap: break-word;
+    margin-top: -px;
+    margin-bottom: 1px;
     transition: overlflow 0.1s ease-in-out;
 }
 
