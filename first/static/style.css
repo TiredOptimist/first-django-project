@@ -153,13 +153,6 @@ body{
     font-size: 20px;
 }
 
-.card-body #btn_delete{
-    width: 100px;
-    justify-content: start;
-    margin-top: 0px;
-    position: absolute;
-}
-
 .btn_do, .btn_todo{
     border: none;
     background-color: #eaeaeaa8;

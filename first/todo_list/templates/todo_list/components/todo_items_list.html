@@ -9,16 +9,17 @@
           {% csrf_token %}
           <button type="submit" id="btn_delete"><i class="fa fa-close"></i></button>
         </form>
+        <button form="toggle-form-{{ todo_item.pk }}" type="submit" class="{% if todo_item.done %}btn_do{% else %}btn_todo{% endif %}">
+          {% if todo_item.done %}
+          Выполнено
+        {% else %}
+          Выполнить
+        {% endif %}
+        </button>
         <div class="card-body">
           <a href="{% url 'todo_list:detail' pk=todo_item.pk %}">
             {{ todo_item.title }}
-            {% if todo_item.done %}
-              🟢
-            {% else %}
-              🔴
-            {% endif %}
           </a>
-          <button form="toggle-form-{{ todo_item.pk }}" type="submit">Выполнено!</button>
           <form id="toggle-form-{{ todo_item.pk }}" action="{% url 'todo_list:toggle_done' pk=todo_item.pk %}" method="post">
             {% csrf_token %}
             <input type="hidden" name="done" value="on">
@@ -32,6 +33,3 @@
     {% endfor %}
   </div>
 </div>
-
-
-
