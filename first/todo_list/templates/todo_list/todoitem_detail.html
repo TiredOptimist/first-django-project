@@ -6,11 +6,11 @@
 
 {% block body %}
 <div class="mb-4 m-2">
-  <h3>#ДЕЛИШКО#:</h3>
+  <h3>#ДЕЛИШКО №{{ object.id }}#:</h3>
   <div>
     <div>Заголовок: <strong>{{ object.title }}</strong></div>
     <div>Статус: <strong>{{ object.done }}</strong></div>
-    <div>Комментарий: <strong>{{ todo_item.description }}</strong></div> <!-- А где текст? -->
+    <div>Комментарий: <strong>{{ object.description }}</strong></div> <!-- А где текст? -->
   </div>
 </div>
 <div class="prev mb-1">
