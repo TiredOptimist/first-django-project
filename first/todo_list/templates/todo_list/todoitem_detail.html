@@ -9,7 +9,13 @@
   <h3>#ДЕЛИШКО №{{ object.id }}#:</h3>
   <div>
     <div>Заголовок: <strong>{{ object.title }}</strong></div>
-    <div>Статус: <strong>{{ object.done }}</strong></div>
+    <div>Статус: <strong>
+      {% if object.done %}
+      	Сделано!
+      {% else %}
+        Ой, дружок, пора взяться за дело!
+      {% endif %} 
+    </strong></div>
     <div>Комментарий: <strong>{{ object.description }}</strong></div> <!-- А где текст? -->
   </div>
 </div>
