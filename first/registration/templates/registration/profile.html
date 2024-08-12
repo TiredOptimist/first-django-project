@@ -7,6 +7,7 @@
 <body>
   <h1>Профиль</h1>
     <p>Приветствуем тебя, {{ username }}!</p>
+    <p><a href="{% url 'todo_list:index' %}">Нас ждут великие дела!</a></p>
     <form method="post" action="{% url 'registration:logout' %}"> 
     {% csrf_token %}
     <button type="submit">Выйти</button>
