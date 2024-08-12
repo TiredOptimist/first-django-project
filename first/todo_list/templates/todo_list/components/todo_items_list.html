@@ -9,7 +9,7 @@
           {% csrf_token %}
           <button type="submit" id="btn_delete"><i class="fa fa-close"></i></button>
         </form>
-        <button form="toggle-form-{{ todo_item.pk }}" type="submit" class="{% if todo_item.done %}btn_do{% else %}btn_todo{% endif %}">
+        <button form="toggle-form-{{ todo_item.pk }}" type="submit" id="btn_top_card" class="{% if todo_item.done %}btn_do{% else %}btn_todo{% endif %}">
           {% if todo_item.done %}
           Выполнено
         {% else %}

@@ -13,13 +13,18 @@
             <form method="post" id="form">
                 {% csrf_token %}
                 <div class="form-group">
-                    {{ form.as_p }}
+                    <label for="title">Название</label>
+                    <input type="text" name="title" class="form-control" id="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Комментарий</label>
+                    <textarea name="description" class="form-control" id="description"></textarea>
                 </div>
                 <button type="submit" class="btn btn-reg" id="btn">Добавить задачу</button>
             </form>
         </div>
         <div class="prev mb-1">
-            <a class="btn m-2" href="{% url 'todo_list:index' %}">Назад</a>
+            <a class="m-2" href="{% url 'todo_list:index' %}">Назад</a>
         </div>
     </div>
 {% endblock body %}

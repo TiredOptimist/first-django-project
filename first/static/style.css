@@ -1,32 +1,77 @@
+*{
+    font-family:"Raleway", sans-serif;
+    list-style: none;
+}
+
+:root{
+    --main-bk: #f3f3f3;
+    --main-font-color: #000;
+    --font-color: #6c6c6c;
+    --dop-font-color: #4d4d4d;
+    --white: #fff;
+
+}
 
 /*main*/
 body{
     overflow-x: hidden;
-    background-color: #f2f2f2;
-    /*  добавить блюр при скроле */
+    background-color: var(--main-bk);
+}
+
+.navbar-nav .nav-link{
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--main-font-color);
+    transition: all 200ms ease-in-out;
+}
+
+.nav-link:hover{
+    color: #5c5c5c;
+}
+
+#zag-text{
+    color: var(--main-font-color);
+    font-weight: 700;
+    font-size: 3em;
+    padding-bottom: 15px;
+
 }
 
 #text-main{
+    color: var(--main-font-color);
+    font-size: 2em;
+    line-height: 1.2;
+    font-weight: 400;
     padding-bottom: 10px;
+}
+
+.black_title{
+    color: var(--main-font-color);
+    font-weight: 700;
 }
 
 #btn{
     background-color: #FCA311;
+    padding: 10px 57px;
     color: #FFFFFF;
-    width: 18%;
-    margin-left: auto;
-    margin-right: auto;
-    height: 20%;
-    display: flex;
+    display: inline-block;
     justify-content: center;
     align-items: center;
-    border-radius: 7px;
+    border-radius: 30px;
     cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
     transition:all 0.15s;
 }
 
+.prev a{
+    text-decoration: none;
+    color: var(--main-font-color);
+    font-weight: 500;
+}
+
 #btn:hover{
-    background-color: #fca211c2;
+    background-color: #ea9711;
 }
 
 #btn a{
@@ -40,19 +85,27 @@ body{
 
 /*todo_list:index*/
 
+
 #container{
-    margin-left: 10px;
+    margin:0px 20px
 }
 
-.todo_list a{
+.todo_list a, .last_todo a{
     text-decoration: none;
     color: #14213D;
 }
 
 
-.last_todo a{
-    text-decoration: none;
-    color: #14213D;
+
+.list_del li a{
+    font-weight: 500;
+    font-size: 17px;
+    transition: all 200ms ease-in-out;
+    color: var(--main-font-color);
+}
+
+.list_del li a:hover{
+    color: #606060;
 }
 
 #btn_delete{
@@ -75,33 +128,43 @@ body{
 
 /*add_todo*/
 
-#id_title{
-    margin-top: 50px;
-    width: 500px;
-    height: 40px;
-    border: 1px solid rgb(225, 225, 225);
-    border-radius: 3px;
+.main h1{
+    font-size: 45px;
+    font-weight: 600;
 }
 
-#id_description{
-    width: 500px;
-    height: 80px;
-    border: 1px solid white;
-    border-radius: 3px;
-    overflow: auto;
-    resize: vertical;
-    word-wrap: break-word;
-    display: inline-block;
+#title{
+    min-height: 45px;
+}
+
+#form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#description{
+    min-height: 170px;
+}
+
+label{
+    font-weight: 600;
+}
+
+.form-group{
+    width: 35%;
+    margin-bottom: 10px;
 }
 
 .container #btn{
-    width: 150px;
+    margin-top: 20px;
 }
+
 
 /*components */
 
 .cont{
-    margin-left: 30px;
+    margin-left: px;
     margin-right: 40px;
     margin-bottom: 20px;
 }
@@ -109,7 +172,7 @@ body{
 .card{
     margin-top: 20px;
     margin-bottom: 6px;
-    height: 300px;
+    height: 320px;
     position: relative;
     transition: 0.3s;
     background-color: none;
@@ -124,7 +187,6 @@ body{
     overflow: hidden;
     width: 220px;
     word-wrap: break-word;
-    margin-top: -px;
     margin-bottom: 1px;
     transition: overlflow 0.1s ease-in-out;
 }
@@ -134,16 +196,18 @@ body{
 }
 
 .card-body::-webkit-scrollbar{
-    width: 5px;
+    width: 3px;
 }
 
 .card-body::-webkit-scrollbar-track{
     background-color: black;
+    
 }
 
 .card-body::-webkit-scrollbar-thumb{
-    background-color:#FCA311;
+    background-color: var(--font-color);
     border-radius: 20px;
+    width: 1px;
 
 }
 
@@ -151,17 +215,27 @@ body{
     text-decoration: none;
     color: #000;
     font-size: 20px;
+    font-weight: 600;
+    line-height: 0.5;
+}
+
+.card-text{
+    font-size: 15px;
+    color: var(--dop-font-color);
+    font-weight: 400;
+    margin-bottom: 10px;
+
 }
 
 .btn_do, .btn_todo{
     border: none;
     background-color: #eaeaeaa8;
     transition: all 0.35s ease-in-out;
-    
+    font-weight: 600;
 }
 
 .btn_todo{
-    background-color: #f60000;
+    background-color: #ff1919;
 }
 
 .btn_do{
@@ -179,20 +253,21 @@ body{
 /* biography */
 
 .bio img{
-    width: 200px;
-    height: 200px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
     margin-bottom: 15px;
 }
 
 .bio{
-    background-color: #ffffff;
-    height: 30%;
-    width: 30%;
-    margin-left: 20px;
+    background-color: var(--white);
+    height: 23%;
+    width: 25%;
+    margin-left: 18px;
     margin-top: 30px;
-    margin-right: 20px;
+    margin-right: 18px;
     border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
 .contBIO{
@@ -201,18 +276,85 @@ body{
 }
 
 .bioTEXT{
-    color: #6c6c6c ;
+    color: var(--font-color);
     margin-top: -4px;
 }
 
 .icon img{
     background-color: pointer;
-    width: 49px;
-    height: 49px;
+    width: 43px;
+    height: 43px;
     margin: 6px;
     cursor: pointer;
+    transition: all 0.2s;
 }
 
 .icon img:hover{
-    background-color: rgba(160, 160, 160, 0.2);
+    background-color: rgba(160, 160, 160, 0.3);
+}
+
+/* todoitem_detail */
+
+.detail{
+    margin-left: 15px;
+    width: auto;
+}
+
+.object_in_info{
+    font-size: 20px;
+    font-weight: 400;
+    padding-top: 5px;
+}
+
+.object{
+    display: inline-block;
+    margin-right: 10px;
+    font-weight: 700;
+}
+
+/* какая та непонятная ссылка*/
+
+.delete_container{
+    margin-left: 15px;
+}
+
+.delete_container p{
+    font-size: 1.4em;
+}
+
+#delete_in_delete{
+    border: none;
+    background-color: #f60000;
+    width: 6em;
+    height: 2em;
+    border-radius: 2px;
+    margin-right: 10px;
+    transition: all 0.2s;
+}
+
+#delete_in_delete:hover{
+    background-color: #fd0101ab;
+}
+
+#cancel{
+    text-decoration: none;
+    color: var(--main-font-color);
+}
+
+/* 
+
+делишко#
+
+если нет задач, то поменять текст
+
+смена тем
+
+адаптив
+
+*/
+
+/* todo_items_list */
+
+.todo_items_list{
+    margin: 0 20px;
 }

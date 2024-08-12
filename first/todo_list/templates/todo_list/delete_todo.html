@@ -5,10 +5,12 @@
 {% endblock title %}
 
 {% block body %}
-  <form method="post">
-    {% csrf_token %}
-    <p>Вы уверены, что хотите удалить "{{ todo.title }}"?</p>
-    <button type="submit">Удалить</button>
-    <a href="{% url 'todo_list:index' %}">Отмена</a>
-  </form>
+  <div class="delete_container mb-4">
+    <form method="post">
+      {% csrf_token %}
+      <p>Вы уверены, что хотите удалить{{ todo.title }}?</p>
+      <button type="submit" id="delete_in_delete">Удалить</button>
+      <a id="cancel"  href="{% url 'todo_list:index' %}">Отмена</a>
+    </form>
+  </div>
 {% endblock body %}
