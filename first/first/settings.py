@@ -131,4 +131,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = reverse_lazy('registration:profile')
 
-LOGOUT_REDIRECT_URL = reverse_lazy('registration:login')
+LOGOUT_REDIRECT_URL = reverse_lazy('index')
