@@ -2,7 +2,7 @@
 <div class="cont">
   <div class="row">
     {% for todo_item in object_list %}
-    <div class="col-2">
+    <div class="col-2 card-column">
       <div class="card">
         <img src="{% static 'img/todo.jpg' %}" alt="" class="card-img-top">
         <form action="{% url 'todo_list:delete_todo' todo_item.id %}" id="form" method="post">

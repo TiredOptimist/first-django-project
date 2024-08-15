@@ -5,21 +5,27 @@
 {% endblock title %}
 
 {% block body %}
-<div class="mb-4 m-2">
+<div class="mb-4 detail">
   <h3>#ДЕЛИШКО №{{ object.id }}#:</h3>
-  <div>
-    <div>Заголовок: <strong>{{ object.title }}</strong></div>
-    <div>Статус: <strong>
-      {% if object.done %}
+  <div class="object_in_info">Комментарий: 
+    <div class="object">{{ object.description }}</div>
+  </div>
+
+    <div class="object_in_info">Заголовок: 
+      <div class="object">{{ object.title }}</div>
+    </div>
+
+    <div class="object_in_info">Статус:
+      <div class="object">
+        {% if object.done %}
       	Сделано!
       {% else %}
         Ой, дружок, пора взяться за дело!
       {% endif %} 
-    </strong></div>
-    <div>Комментарий: <strong>{{ object.description }}</strong></div> <!-- А где текст? -->
-  </div>
+      </div>
+    </div>
 </div>
-<div class="prev mb-1">
-  <a class="btn m-2" href="{% url 'todo_list:index' %}">Назад</a>
+<div class="prev mb-1 mb-3">
+  <a class="m-2" href="{% url 'todo_list:index' %}">Назад</a>
 </div>
 {% endblock body %}
