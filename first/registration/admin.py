@@ -4,5 +4,5 @@ from registration.models import NewUser
 
 @admin.register(NewUser)
 class NewUserAdmin(admin.ModelAdmin):
-    list_display = "id", "username", "password"
+    list_display = "id", "username",
     list_display_links = "username",
