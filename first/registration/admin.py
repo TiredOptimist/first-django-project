@@ -1,3 +1,8 @@
 from django.contrib import admin
+from registration.models import NewUser
 
-# Register your models here.
+
+@admin.register(NewUser)
+class NewUserAdmin(admin.ModelAdmin):
+    list_display = "id", "username",
+    list_display_links = "username",

@@ -9,3 +9,4 @@ class ToDoItemForm(forms.ModelForm):
         fields = ['title', 'description']
 
     description = forms.CharField(required=False)
+

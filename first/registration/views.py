@@ -8,19 +8,6 @@ from django.urls import reverse_lazy
 from django.views.decorators.http import require_http_methods
 
 
-@login_required
-def profile_view(request):
-    username = request.user.username
-    context = {'username': username}
-    return render(request,"registration/profile.html", context)
-
-
-@require_http_methods
-def logout_view(request):
-    logout(request)
-    return redirect('registration:login')
-
-
 def login_view(request):
     if request.method == 'POST':
         form = AuthenticationForm(request, data=request.POST)
@@ -36,13 +23,27 @@ def login_view(request):
     return render(request, 'registration:login', {'form': form})
 
 
+@login_required
+def profile_view(request):
+    username = request.user.username
+    context = {'username': username}
+    return render(request,"registration/profile.html", context)
+
+
+@require_http_methods
+def logout_view(request):
+    logout(request)
+    return redirect('registration:login')
+
+
 class RegisterView(FormView):
     form_class = RegisterForm
     template_name = 'registration/register.html'
     success_url = reverse_lazy('registration:profile')
 
     def form_valid(self, form):
-        form.save()
+        user = form.save()
+        login(self.request, user)
         return super().form_valid(form)
 
 
