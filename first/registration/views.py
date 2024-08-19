@@ -39,7 +39,7 @@ def logout_view(request):
 class RegisterView(FormView):
     form_class = RegisterForm
     template_name = 'registration/register.html'
-    success_url = reverse_lazy('registration:profile')
+    success_url = reverse_lazy('todo_list:index')
 
     def form_valid(self, form):
         user = form.save()
