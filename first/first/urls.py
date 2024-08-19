@@ -24,5 +24,6 @@ urlpatterns = [
     path('todos/', include('todo_list.urls')),
     path("biography/", TemplateView.as_view(template_name="biography.html"), name="biography"),
     path('registration/', include('registration.urls')),
+    path("aboutproject/", TemplateView.as_view(template_name="aboutproject.html"), name="aboutproject"),
 
 ]
