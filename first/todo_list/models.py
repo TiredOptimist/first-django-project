@@ -18,7 +18,7 @@ class ToDoItem(models.Model):
     title = models.CharField(max_length=25)
     done = models.BooleanField(default=False)
     description = models.CharField(max_length=250, default="")
-    user = models.ForeignKey(NewUser, on_delete=models.SET(get_sentinel_user), default=get_sentinel_user_id)
+    user = models.ForeignKey(NewUser, on_delete=models.CASCADE, default=get_sentinel_user_id)
 
     def __str__(self):
         return self.title
