@@ -25,8 +25,8 @@ def login_view(request):
 
 @login_required
 def profile_view(request):
-    username = request.user.username
-    context = {'username': username}
+    user = request.user
+    context = {'username': user.username, 'email': user.email }
     return render(request,"registration/profile.html", context)
 
 
