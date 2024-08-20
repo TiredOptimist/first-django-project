@@ -10,12 +10,7 @@
     <div id="content">
       <div class="todo_list mb-5">
         <h2>#ТВОИ ДЕЛА-ДЕЛИШКИ#</h2>
-        <ul class="list_del">
-          <li><a href="{% url 'todo_list:list' %}" >Полный список дел</a></li>
-          <li><a href="{% url 'todo_list:done' %}" >Список невыполненных дел</a></li>
-          <li><a href="{% url 'todo_list:true_done' %}" >Список выполненных дел</a></li>
-          <li><a href="{% url 'todo_list:add_todo_item' %}" >Добавить новую задачу</a></li>
-        </ul>
+        {% include 'todo_list/components/navbar.html' %}
       </div>
 
       <div class="last_todo">
