@@ -412,8 +412,10 @@ body{
 
 /* todo_items_list */
 
+
 .todo_items_list_h2{
     margin: 0 40px;
+    padding-top: 10px;
 }
 
 .todo_items_list_h2 h2{
@@ -527,97 +529,72 @@ body{
 
 делишко#
 
-если нет задач, то поменять текст
-
-смена тем
-
 адаптив
 
 ошибки
-
-список в туду
 
 */
 
 /* adaptive */
 
 
-
 /* profile */
 
 .container-profile{
     display: grid;
     grid-template-columns: auto 1fr;
-    padding: 10px 40px;
-    grid-gap: 35px
-}
-
-.container-profile-settings{
-    background-color: #e0e0e0;
-    border-radius: 5px;
-    padding: 7px 13px;
-}
-
-.container-profile-profile{
-    background-color: #e0e0e0;
-    padding: 7px 13px;
-    border-radius: 5px;
-}
-
-.container-profile-profile-info-nav{
-    margin-bottom: 15px;
-}
-
-.container-profile-profile-info-nav h5{
-    margin-top: 15px;
-}
-
-
-.btn-logout{
-    margin: 20px 0px 10px 0px;
-    background-color: var(--main-font-color);
-    color: var(--white);
-    padding: 2px 10px ;
-    color: var(--white);
-    transition: all 200ms ease-in-out;
-}
-
-.btn-logout:hover{
-    background-color: var(--main-bk);
-    color: var(--main-font-color);
-}
-
-#profile-link{
-
-    text-decoration: none;
-    color: #000000;
-    font-weight: 600;
-    transition: color 200ms ease-in-out;
-}
-
-#profile-link:hover{
-    color: #ff00cc;
-}
-
-/* profile */
-
-.container-profile{
-    display: grid;
-    grid-template-columns: auto 1fr;
-    padding: 50px 150px;
+    padding: 50px 40px;
     grid-gap: 30px
 }
 
 .container-profile-settings{
     background-color: rgba(255, 255, 255, 0.03);
     border-radius: 10px;
-    padding: 7px 13px;
+    padding: 7px 25px;
     color: var(--main-font-color);
+}
+
+.container-profile-settings-info{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-gap: 15px;
+}
+
+.container-profile-settings-info h4{
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.container-profile-settings-info h5{
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.red-photo{
+    background-color: var(--white);
+    height: 15px;
+    width: 15px;
+}
+
+.cont-photo{
+    padding-bottom: 10px;
+}
+
+.cont-photo img{
+    width: 75px;
+    height: 75px;
+    border-radius: 100px;
+    background-color: var(--main-font-color);
+
+}
+
+.settings-photo{
+    align-content: center;
 }
 
 .container-profile-profile{
     background-color: rgba(255, 255, 255, 0.03);
-    padding: 7px 13px;
+    padding: 7px 25px;
     border-radius: 10px;
 }
 
@@ -634,6 +611,7 @@ body{
     margin: 20px 0px 10px 0px;
     background-color: var(--primary);
     color: var(--secondary-color);
+    font-weight: 500;
     padding: 3px 12px ;
     transition: all 200ms ease-in-out;
 }
@@ -659,3 +637,6 @@ body{
 .about-project h1{
     color: var(--main-font-color);
 }
+
+/* switch theme*/
+

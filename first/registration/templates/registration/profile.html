@@ -16,10 +16,10 @@
     <div class="container-profile-profile">
       <div class="container-profile-profile-info">
         <nav class="container-profile-profile-info-nav">
-          <h1 id="profile">Профиль</h1>
+          <h1 id="profile">Настройки</h1>
           <h5 id="user">Приветствуем тебя, {{ username }}!</h5>
           <h5>Выполненных дел: </h5>
-          <h5>Осталось выполнить: </h5>
+          <h5>Осталось выполнить: </h5> <!-- сделать количество -->
         </nav>
       </div>
 
@@ -31,10 +31,43 @@
     </div>
 
     <div class="container-profile-settings">
-      <h1>Настройки</h1>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error nobis aliquam voluptate debitis tempora veritatis aut ipsam nihil doloribus, illo hic commodi fuga atque architecto sint iure placeat est maxime.
-     <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, dolorem labore. Dolorem, eveniet quas. Nam nisi rem expedita placeat sunt facilis voluptas asperiores repellat. Vero dolore deleniti eius saepe tempora!
+      <h1>Аккаунт</h1>
+        <div class="container-profile-settings-info">
+          <div class="container-profile-settings-info-img">
+            <div class="cont-photo">
+              <h4>Фото</h4>
+              <img src="" alt="">
+            </div>
+            <div class="settings-photo">
+              <button>Поменять фото</button>
+              <button>Удалить фото</button>
+            </div>
+          </div>
+
+        <div class="container-profile-settings-info-status">
+          <h4>Статус</h4>
+        </div>
+
+        <div class="container-profile-settings-info-name">
+          <h4>Имя</h4>
+          <h5> {{ username }} </h5>  <!-- Добавь сюда данные юзера -->
+        </div>
+
+        <div class="container-profile-settings-info-email">
+          <h4>Почта</h4>
+          <h5> example@mail.ru</h5> <!-- Добавь сюда данные юзера -->
+          
+        </div>
+
+        <div class="container-profile-settings-info-password">
+          <h4>Пароль</h4>
+          <h5> Password12345 </h5> <!-- Добавь сюда данные юзера -->
+          
+        </div>
+
+        </div>
       <!-- Тут будут настройки -->
+       
     </div>
   </div>
 </body>
