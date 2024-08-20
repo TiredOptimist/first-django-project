@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'todo_list.apps.TodoListConfig',
     'registration.apps.RegistrationConfig',
-    'imagekit'
+
 ]
 
 MIDDLEWARE = [
