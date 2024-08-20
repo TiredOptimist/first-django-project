@@ -5,13 +5,20 @@
 {% endblock title %}
 
 {% block body %}
-  <div class="mb-4 todo_items_list">
-    <div class="todo_items_list_h2">
-      <h2>#Дела-Делишки#</h2>
+<div id="container">
+  <div id="content">
+    <div class="todo_list mb-5">
+      <h2>#ТВОИ ДЕЛА-ДЕЛИШКИ#</h2>
+      {% include 'todo_list/components/navbar.html' %}
+    </div>
+
+    <div class="last_todo">
+      <h2><span id="last-todo-span">Мой дорогой!</span> Вот твои задачи</h2>
       {% include 'todo_list/components/todo_items_list.html' %}
     </div>
   </div>
-<div class="prev mb-1">
-  <a class="m-2" href="{% url 'todo_list:index' %}">Назад</a>
 </div>
+
+
 {% endblock body %}
+
