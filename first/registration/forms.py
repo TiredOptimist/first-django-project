@@ -35,3 +35,15 @@ class RegisterForm(UserCreationForm):
         super().__init__(*args, **kwargs)
         self.fields["password1"].widget = forms.PasswordInput(attrs={"class": "form-control", "placeholder": "Password"})
         self.fields["password2"].widget = forms.PasswordInput(attrs={"class": "form-control", "placeholder": "Confirm Password"})
+
+
+class UserUpdateForm(forms.ModelForm):
+    class Meta:
+        model = NewUser
+        fields = ('email', 'avatar', 'status')
+
+
+class PasswordChangeForm(forms.Form):
+    old_password = forms.CharField(max_length=30, widget=forms.PasswordInput)
+    new_password1 = forms.CharField(max_length=30, widget=forms.PasswordInput)
+    new_password2 = forms.CharField(max_length=30, widget=forms.PasswordInput)

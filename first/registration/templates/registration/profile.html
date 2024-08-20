@@ -22,8 +22,9 @@
           <h5>Осталось выполнить: </h5> <!-- сделать количество -->
         </nav>
       </div>
-
-      <a href="{% url 'todo_list:index' %}" id="profile-link">-->Нас ждут великие дела!<--</a>
+      <a href="{% url 'registration:password' %}" id="profile-link">Изменить пароль</a>
+      <p><a href="{% url 'todo_list:index' %}" id="profile-link">-->Нас ждут великие дела!<--</a></p>
+      
       <form method="post" action="{% url 'registration:logout' %}"> 
       {% csrf_token %}
       <button type="submit" class="btn btn-logout">Выйти</button>
@@ -38,32 +39,25 @@
               <h4>Фото</h4>
               <img src="{{ user.avatar.url}}" alt="">
             </div>
-            <div class="settings-photo">
-              <button>Поменять фото</button>
-              <button>Удалить фото</button>
-            </div>
           </div>
-
-        <div class="container-profile-settings-info-status">
-          <h4>Статус</h4>
-        </div>
 
         <div class="container-profile-settings-info-name">
           <h4>Имя</h4>
           <h5> {{ username }} </h5>  <!-- Добавь сюда данные юзера -->
         </div>
+          
+          <div class="container-profile-settings-info-status">
+          <h4>Статус</h4>
+            <h5>{{ status }}</h5>
+        </div>
 
         <div class="container-profile-settings-info-email">
           <h4>Почта</h4>
           <h5> {{ email }}</h5> <!-- Добавь сюда данные юзера -->
-          
+
         </div>
 
-        <div class="container-profile-settings-info-password">
-          <h4>Пароль</h4>
-          <h5> Password12345 </h5> <!-- Добавь сюда данные юзера -->
-          
-        </div>
+       
 
         </div>
       <!-- Тут будут настройки -->
