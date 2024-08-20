@@ -215,7 +215,7 @@ body{
     height: 340px;
     position: relative;
     transition: 0.3s;
-    background-color: none;
+    background-color: #282828;
     width: auto;
     border: 1px solid var(--secondary-color);
 }
@@ -229,9 +229,10 @@ body{
     overflow: hidden;
     width: 220px;
     word-wrap: break-word;
-    margin-bottom: 1px;
+    padding-bottom: 2px;
     transition: overlflow 0.1s ease-in-out;
     background-color: #282828;
+    border-radius: 0px 0px 25px 25px ;
     width: 100%;
 }
 
@@ -245,7 +246,6 @@ body{
 
 .card-body::-webkit-scrollbar-track{
     background-color: var(--secondary-color);
-    
 }
 
 .card-body::-webkit-scrollbar-thumb{
@@ -300,7 +300,7 @@ body{
 
 #btn_delete:hover{
     transform: scale(1.07);
-    background-color: var(--secondary-color);
+    background-color: var(--main-bk);
     transform: rotate(90deg);
 }
 
@@ -629,7 +629,6 @@ body{
 .container-profile-profile-info-nav h5{
     margin-top: 15px;
 }
-
 
 .btn-logout{
     margin: 20px 0px 10px 0px;
