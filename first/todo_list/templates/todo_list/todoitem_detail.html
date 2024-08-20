@@ -7,13 +7,14 @@
 {% block body %}
 <div class="mb-4 detail">
   <h3>#ДЕЛИШКО#:</h3>
+
+  <div class="object_in_info">Заголовок: 
+    <div class="object">{{ object.title }}</div>
+  </div>
+
   <div class="object_in_info">Комментарий: 
     <div class="object">{{ object.description }}</div>
   </div>
-
-    <div class="object_in_info">Заголовок: 
-      <div class="object">{{ object.title }}</div>
-    </div>
 
     <div class="object_in_info">Статус:
       <div class="object">
