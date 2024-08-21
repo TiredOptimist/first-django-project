@@ -3,10 +3,11 @@ from django.views.generic import FormView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout, login, authenticate, update_session_auth_hash
 from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm, SetPasswordForm
-from .forms import RegisterForm, UserUpdateForm
+from .forms import RegisterForm, UserPasswordChangeForm
 from django.urls import reverse_lazy
 from django.views.decorators.http import require_http_methods
 from django.contrib import messages
+from django.contrib.auth.views import PasswordChangeView
 
 
 def login_view(request):
@@ -48,17 +49,7 @@ class RegisterView(FormView):
         return super().form_valid(form)
 
 
-@login_required
-def change_password(request):
-    if request.method == 'POST':
-        form = SetPasswordForm(request.user, request.POST)
-        if form.is_valid():
-            form.save()
-            update_session_auth_hash(request, request.user)
-            return redirect('registration:profile')
-    else:
-        form = SetPasswordForm(request.user)
-
-    return render(request, 'registration/password.html', {'form': form})
-
-
+class UserPasswordChange(PasswordChangeView):
+    form_class = UserPasswordChangeForm
+    success_url = reverse_lazy("registration:password_success")
+    template_name = "registration/password.html"
