@@ -24,7 +24,8 @@
       </div>
       <a href="{% url 'registration:password' %}" id="profile-link">Изменить пароль</a>
       <p><a href="{% url 'todo_list:index' %}" id="profile-link">-->Нас ждут великие дела!<--</a></p>
-      
+      <p><a href="{% url 'registration:update' %}">Изменить профиль</a></p>
+
       <form method="post" action="{% url 'registration:logout' %}"> 
       {% csrf_token %}
       <button type="submit" class="btn btn-logout">Выйти</button>
@@ -32,14 +33,19 @@
     </div>
 
     <div class="container-profile-settings">
-      <h1>Аккаунт</h1>
-        <div class="container-profile-settings-info">
-          <div class="container-profile-settings-info-img">
-            <div class="cont-photo">
-              <h4>Фото</h4>
-              <img src="{{ user.avatar.url}}" alt="">
-            </div>
-          </div>
+  <h1>Аккаунт</h1>
+  <div class="container-profile-settings-info">
+    <div class="container-profile-settings-info-img">
+      <div class="cont-photo">
+        <h4>Фото</h4>
+        {% if user.avatar %}
+          <img src="{{ user.avatar.url }}" alt="">
+        {% else %}
+          <img src="{% static 'default.jpg' %}" alt="">
+        {% endif %}
+      </div>
+    </div>
+  </div>
 
         <div class="container-profile-settings-info-name">
           <h4>Имя</h4>

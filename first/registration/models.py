@@ -10,7 +10,7 @@ class NewUser(AbstractUser):
     password = models.CharField(max_length=30, null=True)
     email = models.EmailField(max_length=254, default='')
     status = models.CharField(max_length=250, blank=True, default="Хмм, может поставишь себе новый статус?")
-    avatar = models.ImageField(upload_to='uploads/static/avs', height_field=None, width_field=None, max_length=100,
+    avatar = models.ImageField(upload_to='uploads/avs', height_field=None, width_field=None, max_length=100,
         blank =True, default='static/img/default.jpg')
 
     USERNAME_FIELD = 'username'
