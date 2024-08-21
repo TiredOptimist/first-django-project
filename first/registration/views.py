@@ -8,6 +8,7 @@ from django.urls import reverse_lazy
 from django.views.decorators.http import require_http_methods
 from django.contrib import messages
 from django.contrib.auth.views import PasswordChangeView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 def login_view(request):
@@ -49,7 +50,7 @@ class RegisterView(FormView):
         return super().form_valid(form)
 
 
-class UserPasswordChange(PasswordChangeView):
+class UserPasswordChange(PasswordChangeView, LoginRequiredMixin):
     form_class = UserPasswordChangeForm
     success_url = reverse_lazy("registration:password_success")
     template_name = "registration/password.html"
