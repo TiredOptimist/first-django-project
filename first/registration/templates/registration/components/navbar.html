@@ -12,9 +12,10 @@
         <li><a href="{% url 'registration:password' %}" class="dis-active"><i class='fa fa-lock'></i>Сменить пароль</a></li>
         <li><a href="{% url 'registration:update' %}">Изменить профиль</a></li>
 
-        <li><form method="post" action="{% url 'registration:logout' %}"> 
+        <li><form method="post" action="{% url 'registration:logout' %}">
           {% csrf_token %}
           <button type="submit" id="profile-link">
             <i class='fa fa-wheelchair-alt'></i>Выйти</button></form></li>
       </nav>
     </div>
+ </div>
