@@ -1,14 +1,16 @@
 from django.shortcuts import render, redirect
 from django.views.generic import FormView
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import logout, login, authenticate, update_session_auth_hash
-from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm, SetPasswordForm
+from django.contrib.auth import logout, login, authenticate
+from django.contrib.auth.forms import AuthenticationForm
 from .forms import RegisterForm, UserPasswordChangeForm, UserUpdateForm
 from django.urls import reverse_lazy
 from django.views.decorators.http import require_http_methods
-from django.contrib import messages
 from django.contrib.auth.views import PasswordChangeView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.db.models import Count, Q
+from registration.models import NewUser
+from todo_list.models import ToDoItem
 
 
 def login_view(request):
@@ -37,6 +39,19 @@ def profile_view(request):
 def information_view(request):
     user = request.user
     context = {'username': user.username}
+
+    # Call the user_tasks function to get the task counts
+    todo_items = ToDoItem.objects.filter(user=user).aggregate(
+        total_tasks=Count('id'),
+        completed_tasks=Count('id', filter=Q(done=True)),
+        incomplete_tasks=Count('id', filter=Q(done=False)),
+    )
+
+    # Add the task counts to the context
+    context['total_tasks'] = todo_items['total_tasks']
+    context['completed_tasks'] = todo_items['completed_tasks']
+    context['incomplete_tasks'] = todo_items['incomplete_tasks']
+
     return render(request, "registration/information.html", context)
 
 
@@ -73,3 +88,5 @@ def user_update_view(request):
     else:
         form = UserUpdateForm(instance=request.user)
     return render(request, 'registration/update.html', {'form': form})
+
+
