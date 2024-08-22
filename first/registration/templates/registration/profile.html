@@ -13,40 +13,9 @@
 </head>
 <body>
 
-  <div class="container-profile">
-    <div class="container-settings-navbar">
-      <nav class="container-settings-navbar-nav">
-
-        <li><form action="{% url 'todo_list:index' %}">
-          <button id="profile-link"><i class='fa fa-reply'></i>К великим делам</button>
-            </form> <!-- я себя не прощу за этот костыль --></li>
-
-        <li><a href="#" class="dis-active"><i class="fa fa-info-circle"></i>Информация</a></li>
-        <li><a href="#" class="dis-active"><i class="fa fa-user"></i>Аккаунт</a></li>
-        <li><a href="#" class="dis-active"><i class='fa fa-moon-o'></i>Смена темы</a></li>
-        <li><a href="{% url 'registration:password' %}" class="dis-active"><i class='fa fa-lock'></i>Сменить пароль</a></li>
-
-        <li><form method="post" action="{% url 'registration:logout' %}"> 
-          {% csrf_token %}
-          <button type="submit" id="profile-link">
-            <i class='fa fa-wheelchair-alt'></i>Выйти</button></form></li>
-      </nav>
-    </div>
-
-    <div class="container-profile-info">
-      <div class="container-profile-info-nav">
-        <li><h4 id="profile">Информация</h4></li>
-        <li><h5 id="user">Приветствуем тебя, {{ username }}!</h5></li>
-        <li><h5>Выполненных дел: </h5></li>
-        <li><h5>Осталось выполнить: </h5></li>
-
-      </div>
-    </div>
-
-  </div>
-  
-  <p><a href="{% url 'registration:update' %}">Изменить профиль</a></p>
-
+ {% include 'registration/components/navbar.html' %}
+ 
+ 
   <div class="container-profile-settings">
 <h1>Аккаунт</h1>
 <div class="container-profile-settings-info">

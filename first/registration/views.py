@@ -33,6 +33,13 @@ def profile_view(request):
     return render(request,"registration/profile.html", context)
 
 
+@login_required
+def information_view(request):
+    user = request.user
+    context = {'username': user.username}
+    return render(request, "registration/information.html", context)
+
+
 @require_http_methods
 def logout_view(request):
     logout(request)

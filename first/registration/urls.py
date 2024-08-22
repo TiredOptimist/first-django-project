@@ -8,6 +8,7 @@ app_name = "registration"
 urlpatterns = [
     path('', include('django.contrib.auth.urls')),
     path('profile/', views.profile_view, name="profile"),
+    path('information/', views.information_view, name="information"),
     path('login/', views.login_view, name="login"),
     path('logout/', views.logout_view, name="logout"),
     path('register/', views.RegisterView.as_view(), name="register"),
