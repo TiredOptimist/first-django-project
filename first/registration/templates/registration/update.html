@@ -12,13 +12,19 @@
   <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 </head>
 <body>
-  {% include 'registration/components/navbar.html' %}
-    <h1>Изменить данные профиля</h1>
-  <form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Изменить</button>
-  </form>
 
+<div class="container-profile">
+  {% include 'registration/components/navbar.html' %}
+
+  <div class="settings container-profile-info">
+    <h3 class="container-profile-info-title">Изменить данные профиля</h3>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Изменить</button>
+    </form>
+  </div>
+</div>
+<script src="{% static 'main.js' %}"></script>
 </body>
 </html>

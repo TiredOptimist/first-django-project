@@ -139,11 +139,15 @@ body{
     padding-left: 0.5rem;
 }
 
+.list_del li{
+    padding-top: 4px;
+}
+
 .list_del li a{
     font-weight: 500;
-    font-size: 17px;
-    transition: all 200ms ease-in-out;
+    font-size: 18px;
     color: var(--main-font-color);
+    transition: color 150ms ease-in-out;
 }
 
 .list_del li a:hover{
@@ -561,9 +565,11 @@ body{
 
 .container-profile{
     display: grid;
-    grid-template-columns: 270px 1fr;
+    grid-template-columns: auto 1fr;
     grid-gap: 40px;
     padding: 50px 60px;
+
+    align-items: center;
 }
 
 .container-settings-navbar{
@@ -588,6 +594,7 @@ body{
 
 .container-settings-navbar .active:hover{
     color: var(--primary);
+    transform: scale(1);
 }
 
 .container-settings-navbar li{
@@ -598,8 +605,6 @@ body{
     padding-top: 0px;
     padding-bottom: 20px;
 }
-
-
 
 .container-settings-navbar li a{
     display: block;
@@ -617,6 +622,7 @@ body{
 
 .container-settings-navbar li a:hover{
     color: var(--main-font-color);
+    transform: scale(1.03);
 }
 
 #profile-link{
@@ -633,30 +639,26 @@ body{
 
 #profile-link:hover{
     color: var(--main-font-color);
-}
-
-.container-profile-info{
-    background-color: rgba(255, 255, 255, 0.03);
-    border-radius: 10px;
-    padding: 15px 40px;
-}
-
-.container-profile-info-nav{
-    color: var(--main-font-color)
-}
-
-.container-profile-info-nav li{
-    padding-top: 7px;
-}
-
-.container-profile-info-nav li:first-child{
-    padding-bottom: 10px;
+    transform: scale(1.03);
 }
 
 #profile-link{
     margin-left: 21px;
 }
 
+.container-profile-info{
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    padding: 15px 40px;
+    height: 500px;
+}
+
+/* profile:information */
+
+.container-profile-info-title{
+    color: var(--main-font-color);
+    font-size: 40px;
+}
 
 /* aboutproject*/
 

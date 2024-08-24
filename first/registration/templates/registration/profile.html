@@ -13,49 +13,43 @@
 </head>
 <body>
 
- {% include 'registration/components/navbar.html' %}
- 
- 
-  <div class="container-profile-settings">
-<h1>Аккаунт</h1>
-<div class="container-profile-settings-info">
-  <div class="container-profile-settings-info-img">
-    <div class="cont-photo">
-      <h4>Фото</h4>
-       {% if user.avatar %}
-        <img src="{{ user.avatar.url }}" alt="">
-      {% else %}
-        <img src="{% static 'default.jpg' %}" alt="">
-      {% endif %}
-    </div>
-  </div>
-</div>
+<div class="container-profile">
+  {% include 'registration/components/navbar.html' %}
 
+  <div class="container-profile-info">
+    <h3 class="container-profile-info-title">Аккаунт</h3>
+      <div class="container-profile-settings-info">
+        <div class="container-profile-settings-info-img">
+          <div class="cont-photo">
+            <h4>Фото</h4>
+              {% if user.avatar %}
+            <img src="{{ user.avatar.url }}" alt="">
+              {% else %}
+            <img src="{% static 'default.jpg' %}" alt="">
+              {% endif %}
+          </div>
+        </div>
+      </div>
+  
       <div class="container-profile-settings-info-name">
         <h4>Имя</h4>
         <h5> {{ username }} </h5>
       </div>
-
-        <div class="container-profile-settings-info-status">
+  
+      <div class="container-profile-settings-info-status">
         <h4>Статус</h4>
-          <h5>{{ status }}</h5>
-      </div>
-
+        <h5>{{ status }}</h5>
+        </div>
+  
       <div class="container-profile-settings-info-email">
         <h4>Почта</h4>
         <h5> {{ email }}</h5>
-
       </div>
+  
+    </div>
 
-
-
-      </div>
-    <!-- Тут будут настройки -->
-
-  </div>
 </div>
-
-  <script src="{% static 'main.js' %}"></script>
+<script src="{% static 'main.js' %}"></script>
 </body>
 </html>
 

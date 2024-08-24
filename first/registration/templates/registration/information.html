@@ -13,16 +13,20 @@
 </head>
 <body>
 
-{% include 'registration/components/navbar.html' %}
+
+<div class="container-profile">
+  {% include 'registration/components/navbar.html' %}
  <div class="container-profile-info">
       <div class="container-profile-info-nav">
-        <li><h4 id="profile">Информация</h4></li>
+        <h3 class="container-profile-info-title">Информация</h3>
         <li><h5 id="user">Приветствуем тебя, {{ username }}!</h5></li>
-        <li>Всего задач: {{ total_tasks }}</li>
+        <li><h5>Всего задач: {{ total_tasks }}</h5></li>
         <li><h5>Из них выполнено: {{ completed_tasks }} </h5></li>
         <li><h5>Осталось выполнить: {{ incomplete_tasks }}</h5></li>
       </div>
     </div>
+
+</div>
 
 </body>
 </html>

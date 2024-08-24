@@ -13,9 +13,16 @@
 </head>
 <body>
 
-{% include 'registration/components/navbar.html' %}
- <h1>Темы</h1>
+<div class="container-profile">
+  {% include 'registration/components/navbar.html' %}
+  
 
+  <div class="themes container-profile-info">
+    <h3 class="container-profile-info-title">Темы</h3>
+  </div>
+
+</div>
+<script src="{% static 'main.js' %}"></script>
 </body>
 </html>
 
