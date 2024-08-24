@@ -13,7 +13,11 @@
     </div>
 
     <div class="last_todo">
-      <h2><span id="last-todo-span">Мой дорогой!</span> Вот твои задачи</h2>
+      {% if total_todo == 0 %}
+      	<h2><span id="last-todo-span">Мой дорогой!</span> У тебя пока нет задач!</h2>
+      {% else %}
+        <h2><span id="last-todo-span">Мой дорогой!</span> Вот твои задачи</h2>
+      {% endif %}
       {% include 'todo_list/components/todo_items_list.html' %}
     </div>
   </div>

@@ -21,16 +21,31 @@ class ToDoListIndexView(LoginRequiredMixin, ListView):
     def get_queryset(self):
         return ToDoItem.objects.filter(user=self.request.user).order_by("-id").filter(done=False).all()[:5]
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['total_todo'] = ToDoItem.objects.filter(user=self.request.user).count()
+        return context
+
 
 class ToDoListDoneView(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         return ToDoItem.objects.filter(user=self.request.user).filter(done=False).all()
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['total_todo'] = ToDoItem.objects.filter(user=self.request.user).count()
+        return context
+
 
 class ToDoListTrueDoneView(ListView):
     def get_queryset(self):
         return ToDoItem.objects.filter(user=self.request.user).filter(done=True).all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['total_todo'] = ToDoItem.objects.filter(user=self.request.user).count()
+        return context
 
 
 class ToDoListView(ListView):
@@ -38,6 +53,11 @@ class ToDoListView(ListView):
 
     def get_queryset(self):
         return ToDoItem.objects.filter(user=self.request.user)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['total_todo'] = ToDoItem.objects.filter(user=self.request.user).count()
+        return context
 
 
 class ToDoDetailView(DetailView):
