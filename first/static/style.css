@@ -659,7 +659,185 @@ body{
 .container-profile-info-title{
     color: var(--main-font-color);
     font-size: 40px;
+
 }
+
+.information{
+    color: var(--main-font-color);
+    font-size: 22px;
+    padding-top: 10px;
+}
+
+.information span{
+    font-weight: 300;
+}
+
+
+/* profile:profile*/
+
+.cont-photo img{
+    width: 90px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+
+}
+
+#profile{
+    display: grid;
+    grid-gap: 10px;
+}
+
+.container-profile-info h4{
+    font-size: 23px;
+    color: var(--main-font-color)
+}
+
+.information-info{
+    color: var(--main-font-color);
+    font-weight: 300;
+    font-size: 23px;
+}
+
+
+/* profile:tems*/
+
+
+.themes-cont{
+    display: grid;
+    grid-template-columns: 290px 290px 290px;
+    grid-gap: 30px;
+    padding-top: 10px;
+}
+
+.card-theme {
+    border-radius: 6px;
+    height: 200px;
+    border: 1px solid rgb(0, 0, 0);
+    cursor: pointer;
+
+}
+
+#dark-theme{
+    background-color: #121212;
+
+}
+
+#light-theme{
+    background-color: var(--main-font-color);
+
+}
+
+#power-theme{
+    background-color: #ff00ff;
+
+}
+
+.details-card{
+    background-color: var(--dop-dark);
+    padding: 5px 0px 5px 20px;
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid #000;
+    border-radius: 6px 6px 0px 0px;
+}
+
+
+.min-details h1{
+    font-size: 18px;
+    color: var(--main-font-color);
+    margin: auto;
+}
+
+
+
+/* profile:password  */
+
+.password-cont{
+    color: var(--main-font-color);
+    font-size: 20px;
+    padding-top: 1px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-input{
+    display: block;
+    background-color: var(--dop-dark);
+    width: 350px;
+    border: none;
+    border-radius: 5px;
+    transition: all 100ms ease-in-out;
+    height: 35px;
+    margin-top: -17px;
+    font-size: 20px;
+}
+
+.form-input:focus{
+    outline: none;
+    border: 2px solid var(--primary);
+}
+
+.password-el{
+    margin-top: 20px;
+
+}
+
+.password-btn{
+    margin-top: 10px;
+    border: none;
+    background-color: var(--primary);
+    font-weight: 500;
+    border-radius: 5px;
+    padding: 4px 10px;
+    transition: color 200ms ease-in-out;
+}
+
+.password-btn:hover{
+    background-color: #ffff00;
+}  
+
+.password-el input{
+    color: var(--main-font-color);
+    padding-left: 5px;
+}
+
+#id_avatar button{
+    background-color: var(--dop-dark);
+}
+
+
+/* profile:update */
+
+.update-cont{
+    color: var(--main-font-color);
+
+}
+
+.update-cont p label{
+    font-size: 23px;
+    display: block;
+}
+
+.update-cont p input{
+    background-color: var(--dop-dark);
+    width: 350px;
+    border: none;
+    border-radius: 5px;
+    transition: all 100ms ease-in-out;
+    height: 35px;
+    color: var(--main-font-color);
+    padding-left: 5px;
+    font-size: 20px;
+}
+
+.update-cont p input:focus{
+    outline: none;
+    border: 2px solid var(--primary);
+}
+
 
 /* aboutproject*/
 
