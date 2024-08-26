@@ -29,6 +29,10 @@ body{
     
 }
 
+.navbar-nav{
+    padding-left: 30px;
+}
+
 .navbar-nav .nav-link{
     font-weight: 600;
     font-size: 16px;
@@ -116,7 +120,7 @@ body{
 }
 
 #container{
-    margin: 60px 40px 0 40px;
+    margin: 60px 70px 0 70px;
 }
 
 .todo_list h2{
@@ -679,12 +683,11 @@ body{
     width: 90px;
     aspect-ratio: 1/1;
     border-radius: 50%;
-
 }
 
 #profile{
     display: grid;
-    grid-gap: 10px;
+    grid-gap: 9px;
 }
 
 .container-profile-info h4{
@@ -696,6 +699,7 @@ body{
     color: var(--main-font-color);
     font-weight: 300;
     font-size: 23px;
+    margin-top: -5px;
 }
 
 
@@ -705,49 +709,46 @@ body{
 .themes-cont{
     display: grid;
     grid-template-columns: 290px 290px 290px;
-    grid-gap: 30px;
+    grid-gap: 55px;
     padding-top: 10px;
 }
 
-.card-theme {
-    border-radius: 6px;
-    height: 200px;
-    border: 1px solid rgb(0, 0, 0);
+.card-list-theme{
     cursor: pointer;
-
 }
 
-#dark-theme{
-    background-color: #121212;
-
-}
-
-#light-theme{
-    background-color: var(--main-font-color);
-
-}
-
-#power-theme{
-    background-color: #ff00ff;
-
-}
-
-.details-card{
-    background-color: var(--dop-dark);
-    padding: 5px 0px 5px 20px;
+.card-image-theme img{
     width: 100%;
-    display: flex;
-    border-bottom: 1px solid #000;
-    border-radius: 6px 6px 0px 0px;
+    display: block;
+    border-bottom: 1px solid #4d4c4c;
 }
 
+.card-theme{
+	background-color: #171717;
+	border-radius: 10px;
+	overflow: hidden;
+    border: 1px solid #626262;
+	position: relative;
+}
 
-.min-details h1{
-    font-size: 18px;
+.card-image-theme{
+	border-radius: 10px 10px 0px 0px;
+	overflow: hidden;
+}
+
+.card-header-theme {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;	
+    padding: 0px 0px 5px 6px;
+    margin-top: -10px;
+}
+
+.card-header-theme a{
+    text-decoration: none;
     color: var(--main-font-color);
-    margin: auto;
+    
 }
-
 
 
 /* profile:password  */

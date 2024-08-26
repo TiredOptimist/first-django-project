@@ -16,11 +16,12 @@
 
 <div class="container-profile">
   {% include 'registration/components/navbar.html' %}
+  
  <div class="container-profile-info">
       <div class="container-profile-info-nav">
         <h3 class="container-profile-info-title" >Информация</h3>
         <li><h5 class="information">Приветствуем тебя, <span>{{ username }}</span>!</h5></li>
-        <li><h5 class="information">Всего: <span>{{ total_tasks }}</span></h5></li>
+        <li><h5 class="information">Всего задач: <span>{{ total_tasks }}</span></h5></li>
         <li><h5 class="information">Из них выполнено: <span>{{ completed_tasks }}</span> </h5></li>
         <li><h5 class="information">Осталось выполнить: <span>{{ incomplete_tasks }}</span></h5></li>
       </div>
