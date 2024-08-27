@@ -11,12 +11,12 @@
   {% load static %}
   <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 </head>
-<body>
+{% block body %}
 
 
 <div class="container-profile">
   {% include 'registration/components/navbar.html' %}
-  
+
  <div class="container-profile-info">
       <div class="container-profile-info-nav">
         <h3 class="container-profile-info-title" >Информация</h3>
@@ -29,7 +29,7 @@
 
 </div>
 
-</body>
+{% endblock body %}
 </html>
 
 

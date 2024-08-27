@@ -506,10 +506,11 @@ body{
     margin-top: 8px;
     font-size: 16px;
     font-weight: 500;
+    transition: all 100ms ease;
 }
 
-::placeholder{
-    color: #fcfcfc;
+.form-group-reg input:focus{
+    border: 1px solid var(--primary);
 }
 
 .reg-btn{
@@ -708,13 +709,9 @@ body{
 
 .themes-cont{
     display: grid;
-    grid-template-columns: 290px 290px 290px;
-    grid-gap: 55px;
+    grid-template-columns: 240px 240px 240px 240px;
+    grid-gap: 20px;
     padding-top: 10px;
-}
-
-.card-list-theme{
-    cursor: pointer;
 }
 
 .card-image-theme img{
@@ -723,12 +720,14 @@ body{
     border-bottom: 1px solid #4d4c4c;
 }
 
+
 .card-theme{
 	background-color: #171717;
 	border-radius: 10px;
 	overflow: hidden;
     border: 1px solid #626262;
 	position: relative;
+    box-shadow: 1px 1px 7px #000 ;
 }
 
 .card-image-theme{
@@ -744,10 +743,16 @@ body{
     margin-top: -10px;
 }
 
-.card-header-theme a{
-    text-decoration: none;
+.card-header-theme button{
+    background-color: transparent;
     color: var(--main-font-color);
-    
+    border: none;
+    width: auto;
+
+}
+
+#total_black img{
+    filter: blur(120px);
 }
 
 
@@ -856,5 +861,29 @@ body{
 
 /* switch theme*/
 
-  
+.pinkystyle{
+    --main-bk: #1A0011;
+    --main-font-color: #F3E2EE;
+    --secondary-color: #891662;
+    --primary: #F81FAF;
+    --white: #fff;
+    --dop-dark: #11050D;
+}
 
+.lightstyle {
+    --main-bk: #FFFFFF;
+    --main-font-color: #000000;
+    --secondary-color: #808080;
+    --primary: #FF0000;
+    --white: #FFFFFF;
+    --dop-dark: #FFFFFF;
+}
+
+.darkstyle {
+    --main-bk: #000000;
+    --main-font-color: #FFFFFF;
+    --secondary-color: #808080;
+    --primary: #00FFFF;
+    --white: #FFFFFF;
+    --dop-dark: #000000;
+}

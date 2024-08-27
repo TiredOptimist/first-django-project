@@ -11,7 +11,7 @@
   {% load static %}
   <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 </head>
-<body>
+{% block body %}
 <div class="reg-container">
   <form method="post" class="reg-form">
     <h3>Войти</h3>
@@ -47,10 +47,11 @@
       <a href="#">Забыли пароль?</a></p>
       Нет аккаунта? <a href="{% url 'registration:register' %}"> Зарегистрироваться</a>
     </div>
+    <div class="prev-in-main">
+      <a href="{% url 'index' %}">На главную</a>
+    </div>
 </form>
 </div>
-<div class="prev-in-main">
-  <a href="{% url 'index' %}">На главную</a>
-</div>
-</body>
+
+{% endblock %}
 </html>

@@ -1,5 +1,7 @@
 {% extends 'base2.html' %}
 
+{% load static %}
+
 {% block title %}
 	О проекте
 {% endblock %}
@@ -7,6 +9,6 @@
 {% block body %}
 	<div class="about-project">
 		<h1>Но но но мистер фиш</h1>
-		
+		<img src="{% static 'img/about.jpg' %}" alt="">
 	</div>
-{% endblock %}
+{% endblock body %}
