@@ -10,6 +10,8 @@
     --primary: #fff200;
     --white: #fff;
     --dop-dark: #282828;
+    --navbar: #171717fe;
+    --form-control: #303030;
 }
 
 /*main*/
@@ -22,7 +24,7 @@ body{
 .navbar{
     position: sticky;
     width: 100%;
-    background-color: #171717fe;
+    background-color: var(--navbar);
     box-shadow: 0px 5px 20px #040404;
     top: 0;
     z-index: 1;
@@ -192,12 +194,12 @@ body{
 }
 
 .form-control{
-    background-color: #303030;
+    background-color: var(--form-control);
     border: none;
 }
 
 .form-control:focus{
-    background-color: #303030;
+    background-color: var(--form-control);
     color: var(--main-font-color);
 }
 
@@ -500,7 +502,7 @@ body{
     display: block;
     height: 50px;
     width: 100%;
-    background-color: #303030;
+    background-color: var(--form-control);
     border-radius: 3px;
     padding: 0 10px;
     margin-top: 8px;
@@ -745,7 +747,7 @@ body{
 
 .card-header-theme button{
     background-color: transparent;
-    color: var(--main-font-color);
+    color: #f2f2f2;
     border: none;
     width: auto;
 
@@ -771,7 +773,7 @@ body{
 
 .form-input{
     display: block;
-    background-color: var(--dop-dark);
+    background-color: var(--form-control);
     width: 350px;
     border: none;
     border-radius: 5px;
@@ -861,6 +863,18 @@ body{
 
 /* switch theme*/
 
+.dark{
+    --main-bk: #1a1a1a;
+    --main-font-color: #f2f2f2;
+    --secondary-color: #000;
+    --primary: #fff200;
+    --white: #fff;
+    --dop-dark: #282828;
+    --navbar:  #171717fe;
+    --form-control: #303030;
+
+}
+
 .pinkystyle{
     --main-bk: #1A0011;
     --main-font-color: #F3E2EE;
@@ -868,22 +882,27 @@ body{
     --primary: #F81FAF;
     --white: #fff;
     --dop-dark: #11050D;
+    --navbar: #12000c;
 }
 
 .lightstyle {
     --main-bk: #FFFFFF;
     --main-font-color: #000000;
     --secondary-color: #808080;
-    --primary: #FF0000;
+    --primary: #fff200;
     --white: #FFFFFF;
     --dop-dark: #FFFFFF;
+    --navbar: #fbfbfb;
+    --form-control: #a2a2a2;
 }
 
-.darkstyle {
-    --main-bk: #000000;
+
+.total-black {
+    --main-bk: #0b0b0b;
     --main-font-color: #FFFFFF;
     --secondary-color: #808080;
-    --primary: #00FFFF;
+    --primary: #fff200;
     --white: #FFFFFF;
     --dop-dark: #000000;
+    --navbar:#000000 ;
 }

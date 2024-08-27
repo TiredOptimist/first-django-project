@@ -1,5 +1,5 @@
 {% extends 'todo_list/base.html' %}
-
+{% load static %}
 {% block title %}
   Дела-Делишки
 {% endblock title %}
@@ -25,4 +25,5 @@
       </div>
     </div>
   </div>
+  <script src="{% static 'main.js' %}"></script>
 {% endblock body %}

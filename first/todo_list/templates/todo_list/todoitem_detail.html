@@ -1,5 +1,7 @@
 {% extends 'todo_list/base.html' %}
 
+{% load static %}
+
 {% block title %}
   Делишко #{{ object.id }}
 {% endblock title %}
@@ -29,4 +31,6 @@
 <div class="prev mb-1 mb-3">
   <a class="m-2" href="{% url 'todo_list:index' %}">Назад</a>
 </div>
+
+<script src="{% static 'main.js' %}"></script>
 {% endblock body %}
