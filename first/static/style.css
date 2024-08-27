@@ -9,9 +9,12 @@
     --secondary-color: #000;
     --primary: #fff200;
     --white: #fff;
-    --dop-dark: #282828;
+    --card-color: #282828;
     --navbar: #171717fe;
     --form-control: #303030;
+    --card-border: #000;
+    --btn-hover: #ffff00 ;
+
 }
 
 /*main*/
@@ -230,9 +233,13 @@ body{
     height: 340px;
     position: relative;
     transition: 0.3s;
-    background-color: #282828;
+    background-color: var(--card-color);
     width: auto;
-    border: 1px solid var(--secondary-color);
+    border: 1px solid var(--card-border);
+}
+
+#btn_top_card{
+    color: var(--card-border)
 }
 
 .card:hover{
@@ -246,7 +253,7 @@ body{
     word-wrap: break-word;
     padding-bottom: 2px;
     transition: overlflow 0.1s ease-in-out;
-    background-color: #282828;
+    background-color: var(--card-color);
     border-radius: 0px 0px 25px 25px ;
     width: 100%;
 }
@@ -796,6 +803,7 @@ body{
 .password-btn{
     margin-top: 10px;
     border: none;
+    color: var(--main-font-color);
     background-color: var(--primary);
     font-weight: 500;
     border-radius: 5px;
@@ -804,7 +812,7 @@ body{
 }
 
 .password-btn:hover{
-    background-color: #ffff00;
+    background-color: var(--btn-hover);
 }  
 
 .password-el input{
@@ -813,7 +821,7 @@ body{
 }
 
 #id_avatar button{
-    background-color: var(--dop-dark);
+    background-color: var(--card-color);
 }
 
 
@@ -821,7 +829,6 @@ body{
 
 .update-cont{
     color: var(--main-font-color);
-
 }
 
 .update-cont p label{
@@ -830,7 +837,7 @@ body{
 }
 
 .update-cont p input{
-    background-color: var(--dop-dark);
+    background-color: var(--form-control);
     width: 350px;
     border: none;
     border-radius: 5px;
@@ -869,40 +876,56 @@ body{
     --secondary-color: #000;
     --primary: #fff200;
     --white: #fff;
-    --dop-dark: #282828;
+    --card-color: #282828;
     --navbar:  #171717fe;
     --form-control: #303030;
+    --card-border: #000;
 
 }
 
 .pinkystyle{
-    --main-bk: #1A0011;
+    --main-bk: #9e3d7c;
+    --main-font-color: #ffffff;
+    --secondary-color: #891662;
+    --primary: #3c0008;
+    --white: #fff;
+    --card-color: #6d1650;
+    --navbar: #8f1867;
+    --form-control: #d547a6;
+    --card-border: #b3468d;
+    --btn-hover: #47000a;
+    /*     --main-bk: #1A0011;
     --main-font-color: #F3E2EE;
     --secondary-color: #891662;
     --primary: #F81FAF;
     --white: #fff;
-    --dop-dark: #11050D;
-    --navbar: #12000c;
+    --card-color: #43052e;
+    --navbar: #12000c; */
 }
 
 .lightstyle {
-    --main-bk: #FFFFFF;
+    --main-bk: #f2f2f2;
     --main-font-color: #000000;
     --secondary-color: #808080;
     --primary: #fff200;
     --white: #FFFFFF;
-    --dop-dark: #FFFFFF;
+    --card-color: #cecece;
     --navbar: #fbfbfb;
-    --form-control: #a2a2a2;
+    --form-control: #c7c7c7;
+    --card-border: #6b6b6b;
+    --btn-hover: #e8dc00;
 }
 
 
 .total-black {
-    --main-bk: #0b0b0b;
+    --main-bk: #111111;
     --main-font-color: #FFFFFF;
     --secondary-color: #808080;
-    --primary: #fff200;
+    --primary: #bebebe;
     --white: #FFFFFF;
-    --dop-dark: #000000;
+    --card-color: #272727;
     --navbar:#000000 ;
+    --form-control: #2f2f2f ;
+    --card-border: #000;
+    --btn-hover:#d3d3d3 ;
 }
