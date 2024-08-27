@@ -14,7 +14,13 @@
     --form-control: #303030;
     --card-border: #000;
     --btn-hover: #ffff00 ;
-
+    --btn-font:  #000;
+    --reg-back: #000;
+    --reg-btn-back: #f2f2f2;
+    --reg-btn-hover: #c9c9c9;
+    --reg-btn-color: #000;
+    --nav-font: #b0b0b0;
+    --index-shadow: #353535;
 }
 
 /*main*/
@@ -60,11 +66,11 @@ body{
     background-color: var(--primary);
     border-radius: 50px;
     margin-bottom: 30px;
-    box-shadow: 10px -13px #353535;
+    box-shadow: 10px -13px var(--index-shadow);
 }
 
 #zag-text h1{
-    color: var(--secondary-color);
+    color: var(--btn-font);
     font-weight: 700;
     font-size: 3em;
     line-height: 0.8em;
@@ -87,6 +93,7 @@ body{
 #btn{
     background-color: var(--primary);
     padding: 10px 57px;
+    color: var(--btn-font);
     display: inline-block;
     justify-content: center;
     align-items: center;
@@ -103,7 +110,7 @@ body{
 
 #btn a{
     text-decoration: none;
-    color: var(--secondary-color)
+    color: var(--btn-font)
 }
 
 .prev a{
@@ -208,6 +215,7 @@ body{
 
 .container #btn{
     margin-top: 20px;
+    color: var(--btn-font);
 }
 
 
@@ -469,7 +477,7 @@ body{
 .reg-form{
     height: auto;
     width: 400px;
-    background-color: var(--secondary-color);
+    background-color: var(--reg-back);
     position: absolute;
     transform: translate(-50%,-50%);
     top: 50%;
@@ -525,8 +533,8 @@ body{
 .reg-btn{
     margin-top: 30px;
     width: 100%;
-    background-color: var(--main-font-color);
-    color: var(--secondary-color);
+    background-color: var(--reg-btn-back);
+    color: var(--reg-btn-color);
     padding: 15px 0;
     font-size: 18px;
     font-weight: 600;
@@ -536,7 +544,7 @@ body{
 }
 
 .reg-btn:hover{
-    background-color: #c9c9c9;
+    background-color: var(--reg-btn-hover);
 }
 
 .sub-help{
@@ -624,7 +632,7 @@ body{
 .container-settings-navbar li a{
     display: block;
     text-decoration: none;
-    color: #b0b0b0;
+    color: var(--nav-font);
     font-size: 18px;
     padding: 5px 20px;
     transition: color 100ms ease-in-out;
@@ -643,7 +651,7 @@ body{
 #profile-link{
     border: none;
     background-color: rgba(255, 255, 255, 0);
-    color: #b0b0b0;
+    color: var(--nav-font);
     font-size: 18px;
     transition: color 100ms ease-in-out;
 }
@@ -803,7 +811,7 @@ body{
 .password-btn{
     margin-top: 10px;
     border: none;
-    color: var(--main-font-color);
+    color: var(--btn-font);
     background-color: var(--primary);
     font-weight: 500;
     border-radius: 5px;
@@ -880,7 +888,14 @@ body{
     --navbar:  #171717fe;
     --form-control: #303030;
     --card-border: #000;
-
+    --btn-font: #000;
+    --btn-font:  #000;
+    --reg-back: #000;
+    --reg-btn-back: #f2f2f2;
+    --reg-btn-hover: #c9c9c9;
+    --reg-btn-color: #000;
+    --nav-font: #b0b0b0;
+    --index-shadow: #353535;
 }
 
 .pinkystyle{
@@ -894,13 +909,14 @@ body{
     --form-control: #d547a6;
     --card-border: #b3468d;
     --btn-hover: #47000a;
-    /*     --main-bk: #1A0011;
-    --main-font-color: #F3E2EE;
-    --secondary-color: #891662;
-    --primary: #F81FAF;
-    --white: #fff;
-    --card-color: #43052e;
-    --navbar: #12000c; */
+    --btn-font:  #ff74e5;
+    --reg-back: #ab0072;
+    --reg-btn-back: #42002c;
+    --reg-btn-hover: #640043;
+    --reg-btn-color: #ffffff;
+    --nav-font: #e895cb;
+    --index-shadow:#880061;
+
 }
 
 .lightstyle {
@@ -911,21 +927,35 @@ body{
     --white: #FFFFFF;
     --card-color: #cecece;
     --navbar: #fbfbfb;
-    --form-control: #c7c7c7;
+    --form-control: #d8d8d8;
     --card-border: #6b6b6b;
     --btn-hover: #e8dc00;
+    --btn-font: #000;
+    --reg-back: #f1f1f1;
+    --reg-btn-back: #000000;
+    --reg-btn-hover: #373737;
+    --reg-btn-color: #ffffff;
+    --nav-font: #848484;
+    --index-shadow:#353535;
 }
 
 
 .total-black {
     --main-bk: #111111;
-    --main-font-color: #FFFFFF;
-    --secondary-color: #808080;
-    --primary: #bebebe;
-    --white: #FFFFFF;
+    --main-font-color: #0c0c0c;
+    --secondary-color: #0e0e0e;
+    --primary: #1a1a1a;
+    --white: #121212;
     --card-color: #272727;
     --navbar:#000000 ;
-    --form-control: #2f2f2f ;
+    --form-control: #000000 ;
     --card-border: #000;
-    --btn-hover:#d3d3d3 ;
+    --btn-hover:#111111 ;
+    --nav-font: #000;
+    --reg-back: #000000;
+    --reg-btn-back: #000000;
+    --reg-btn-hover: #000000;
+    --reg-btn-color: #000000;
+    --nav-font: #000000;
+    --index-shadow: #000;
 }
