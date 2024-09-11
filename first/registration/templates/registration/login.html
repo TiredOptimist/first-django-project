@@ -44,7 +44,7 @@
       </div>
     {% endif %}
     <div class="sub-help">
-      <a href="#">Забыли пароль?</a></p>
+      <a href="{% url 'registration:password_reset' %}">Забыли пароль?</a></p>
       Нет аккаунта? <a href="{% url 'registration:register' %}"> Зарегистрироваться</a>
     </div>
     <div class="prev-in-main">
