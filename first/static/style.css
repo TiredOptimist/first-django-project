@@ -198,6 +198,7 @@ body{
 
 #title{
     min-height: 45px;
+
 }
 
 #form{
@@ -421,6 +422,7 @@ body{
 .detail{
     padding: 10px 40px 0 40px;
     width: auto;
+
 }
 
 .detail h3{
@@ -722,6 +724,7 @@ body{
     width: 90px;
     aspect-ratio: 1/1;
     border-radius: 50%;
+    border: 1px solid var(--main-font-color);
 }
 
 #profile{
