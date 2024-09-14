@@ -41,6 +41,9 @@ class UserUpdateForm(forms.ModelForm):
     class Meta:
         model = NewUser
         fields = ('email', 'avatar', 'status')
+        widgets = {
+            'avatar': forms.FileInput(attrs={'class': 'form-control'})
+        }
 
 
 class UserPasswordChangeForm(PasswordChangeForm):
