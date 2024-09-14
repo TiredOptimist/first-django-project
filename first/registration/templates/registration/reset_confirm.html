@@ -2,12 +2,13 @@
 {% load static %}
 
 {% block title %}
-  Восстановление пароля
+  Еще чуть-чуть...
 {% endblock title %}
 
 {% block body %}
   <h1>Восстановление пароля</h1>
-  <form method="post">
+ <form method="post">
+ <div class="form-error">{{ form.non_field_errors }}</div>
     {% csrf_token %}
     {% for f in form %}
     	<p><label class="form-label" for="{{ f.id_for_label }}">{{ f.label }}: </label>{{ f }}</p>
@@ -16,4 +17,3 @@
   <p><button type="submit">Сбросить пароль</button></p>
   </form>
 {% endblock body %}
-</html>
