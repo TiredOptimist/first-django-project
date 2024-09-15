@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-  Редактироварие профиля
+  Редактирование профиля
 {% endblock title %}
 
 {% block body %}
@@ -19,7 +19,7 @@
         {% csrf_token %}
         {{ form.as_p }}
 
-        <button type="submit" class="password-btn">Готово</button>
+        <button type="submit" class="password-btn ready">Готово</button>
       </form>
 
     </div>

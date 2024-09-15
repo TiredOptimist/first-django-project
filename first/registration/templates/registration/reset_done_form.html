@@ -6,7 +6,11 @@
 {% endblock title %}
 
 {% block body %}
-  <h1>На указанную электронную почту сброшена инструкция по восстановлению пароля!</h1>
-  <a href="{% url 'registration:login' %}"></a>
+  <div class="reset_done">
+    <div class="done_form">
+      <h1>На указанную электронную почту сброшена инструкция по восстановлению пароля!</h1>
+      <a href="{% url 'registration:login' %}">Назад</a>
+    </div>
+  </div>
 {% endblock body %}
 </html>
