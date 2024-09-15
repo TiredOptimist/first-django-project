@@ -15,10 +15,8 @@
       
       <form method="post" class="reset_form confirm_form">
 
-        <div class="form-error">
-          {{ form.non_field_errors }}
-        </div>
-
+        <div class="form-error">{{ form.non_field_errors }}</div>
+        
           {% csrf_token %}
           {% for f in form %}
 
@@ -30,9 +28,9 @@
 
         <div class="prev-in-main">
           <a href="{% url 'registration:login' %}">Авторизоваться</a>
-        </div>
+        </div>        
 
-     </form>  
+     </form>
     </div>
   </div>
 {% endblock body %}
