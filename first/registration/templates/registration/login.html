@@ -29,6 +29,9 @@
           {{ form.password.errors|join:", " }}
         </div>
       {% endif %}
+      <div class="cont_reset">
+        <a href="{% url 'registration:reset_form' %}" class="reset_password-login">Забыли пароль?</a>
+      </div>
     </div>
     
     <button type="submit" value="Login" class="reg-btn">Войти</button>
@@ -38,7 +41,6 @@
       </div>
     {% endif %}
     <div class="sub-help">
-      <a href="{% url 'registration:reset_form' %}">Забыли пароль?</a></p>
       Нет аккаунта? <a href="{% url 'registration:register' %}"> Зарегистрироваться</a>
     </div>
     <div class="prev-in-main">

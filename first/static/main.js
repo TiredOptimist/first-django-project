@@ -26,3 +26,4 @@ document.addEventListener('DOMContentLoaded', function() {
         setTheme('total-black');
     });
 })
+

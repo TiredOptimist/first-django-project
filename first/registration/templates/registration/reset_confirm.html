@@ -6,14 +6,33 @@
 {% endblock title %}
 
 {% block body %}
-  <h1>Восстановление пароля</h1>
- <form method="post">
- <div class="form-error">{{ form.non_field_errors }}</div>
-    {% csrf_token %}
-    {% for f in form %}
-    	<p><label class="form-label" for="{{ f.id_for_label }}">{{ f.label }}: </label>{{ f }}</p>
-      <div class="form-error">{{ f.errors }}</div>
-    {% endfor %}
-  <p><button type="submit">Сбросить пароль</button></p>
-  </form>
+  <div class="reset_container confirm-cont ">
+    
+    <div class="reset-el">
+      <div class="reset-title">
+        <h3>Восстановление пароля</h3>
+      </div>
+      
+      <form method="post" class="reset_form confirm_form">
+
+        <div class="form-error">
+          {{ form.non_field_errors }}
+        </div>
+
+          {% csrf_token %}
+          {% for f in form %}
+
+          <label class="form-label" for="{{ f.id_for_label }}">{{ f.label }}: </label>{{ f }}
+          <div class="form-error">{{ f.errors }}</div>
+        {% endfor %}
+
+        <button type="submit" class="password-btn" id="reset-btn">Сбросить пароль</button>
+
+        <div class="prev-in-main">
+          <a href="{% url 'registration:login' %}">Авторизоваться</a>
+        </div>
+
+     </form>  
+    </div>
+  </div>
 {% endblock body %}
