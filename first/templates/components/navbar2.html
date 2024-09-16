@@ -1,9 +1,17 @@
 <nav class="navbar navbar-expand p-3 mb-5 rounded">
   <div class="container-fluid">
+
     <div class="navbar-nav">
       <a class="nav-link" aria-current="page" href="{% url 'index' %}">Главная</a>
       <a class="nav-link" aria-current="page" href="{% url 'aboutproject' %}">О проекте</a></a>
       <a class="nav-link" aria-current="page" href="{% url 'biography' %}">О нас</a>
     </div>
+
+    <div class="navbar-themes">
+      <button id="dark" class="btn-themes-nav"><i class='fa fa-moon-o'></i></button>
+      <button id="light" class="btn-themes-nav"><i class='fa fa-sun-o'></i></button>
+      <button id="pinky" class="btn-themes-nav"><i class='fa fa-car'></i></button>
+    </div>
+
   </div>
 </nav>
