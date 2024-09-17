@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views.generic import FormView
+from django.views.generic import FormView, DeleteView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout, login, authenticate
 from django.contrib.auth.forms import AuthenticationForm
@@ -89,4 +89,12 @@ def user_update_view(request):
         form = UserUpdateForm(instance=request.user)
     return render(request, 'registration/update.html', {'form': form})
 
+
+class DeleteUserView(DeleteView, LoginRequiredMixin):
+    model = NewUser
+    template_name = 'registration/delete.html'
+    success_url = reverse_lazy('registration:delete_success')
+
+    def get_object(self, queryset=None):
+        return self.request.user
 

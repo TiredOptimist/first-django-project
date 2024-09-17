@@ -10,7 +10,7 @@
     <li><a href="{% url 'registration:tems' %}" class="dis-active"><i class='fa fa-moon-o'></i>Смена темы</a></li>
     <li><a href="{% url 'registration:password' %}" class="dis-active"><i class='fa fa-lock'></i>Сменить пароль</a></li>
     <li><a href="{% url 'registration:update' %}" class="dis-active"><i class='fa fa-gear'></i>Настройки</a></li>
-
+    <li><a href="{% url 'registration:delete' %}">Удалить аккаунт</a></li>
     <li><form method="post" action="{% url 'registration:logout' %}">
       {% csrf_token %}
       <button type="submit" id="profile-link">

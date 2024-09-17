@@ -1,0 +1,23 @@
+{% extends 'registration/base__login.html' %}
+{% load static %}
+
+{% block title %}
+  Не уходи(
+{% endblock title %}
+
+{% block body %}
+  <h1>Вы уверены, что хотите удалить свой аккаунт?</h1>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Удалить аккаунт</button>
+  </form>
+  
+<script src="{% static 'main.js' %}"></script>
+{% endblock body %}
+</html>
+
+
+
+
+
+

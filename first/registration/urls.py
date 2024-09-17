@@ -12,6 +12,8 @@ urlpatterns = [
     path('information/', views.information_view, name="information"),
     path('login/', views.login_view, name="login"),
     path('logout/', views.logout_view, name="logout"),
+    path('delete/', views.DeleteUserView.as_view(), name='delete'),
+    path('delete_success/', TemplateView.as_view(template_name="registration/delete_success.html"), name='delete_success'),
     path('register/', views.RegisterView.as_view(), name="register"),
     path('password/', views.UserPasswordChange.as_view(), name="password"),
     path('password_success/', TemplateView.as_view(template_name="registration/password_success.html"), name="password_success"),

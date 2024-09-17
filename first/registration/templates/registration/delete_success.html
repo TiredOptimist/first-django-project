@@ -1,0 +1,20 @@
+{% extends 'registration/base__login.html' %}
+{% load static %}
+
+{% block title %}
+  Неееет, вернись!
+{% endblock title %}
+
+{% block body %}
+  <h1>Ваше существование на этом сайте завершилось...</h1>
+  
+  <p><h2><a href="{% url 'registration:register' %}">Выхода</a> нет... Скоро рассвет..</h2></p>
+<script src="{% static 'main.js' %}"></script>
+{% endblock body %}
+</html>
+
+
+
+
+
+
