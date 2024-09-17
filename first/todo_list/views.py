@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpRequest, HttpResponse
 from django.views.generic import ListView, DetailView, View
-from .forms import ToDoItemForm
+from .forms import ToDoItemForm, UpdateCardForm
 from .models import ToDoItem
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -104,3 +104,16 @@ class ToggleDoneView(LoginRequiredMixin, View):
         todo_item.done = not todo_item.done
         todo_item.save()
         return redirect(request.META.get('HTTP_REFERER'))
+
+
+@login_required
+def edit_todo(request, pk):
+    todo_item = ToDoItem.objects.get(pk=pk)
+    if request.method == 'POST':
+        form = UpdateCardForm(request.POST, instance=todo_item)
+        if form.is_valid():
+            form.save()
+            return redirect('todo_list:detail', pk=pk)
+    else:
+        form = UpdateCardForm(instance=todo_item)
+    return render(request, 'todo_list/edit_todo.html', {'form': form, 'todo_item': todo_item})

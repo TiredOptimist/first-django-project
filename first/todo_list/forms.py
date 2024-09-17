@@ -10,3 +10,8 @@ class ToDoItemForm(forms.ModelForm):
 
     description = forms.CharField(required=False)
 
+
+class UpdateCardForm(forms.ModelForm):
+    class Meta:
+        model = ToDoItem
+        fields = ('description',)

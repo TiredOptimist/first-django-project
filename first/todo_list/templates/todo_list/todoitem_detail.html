@@ -18,6 +18,13 @@
     <div class="object">{{ object.description }}</div>
   </div>
 
+  <div class="object_in_info">
+  <button form="edit-form-{{ object.id }}" type="submit" id="btn_edit_card">Изменить описание</button>
+  <form id="edit-form-{{ object.id }}" action="{% url 'todo_list:edit_todo' pk=object.id %}" method="post">
+    {% csrf_token %}
+  </form>
+  </div>
+
     <div class="object_in_info">Статус:
       <div class="object">
         {% if object.done %}

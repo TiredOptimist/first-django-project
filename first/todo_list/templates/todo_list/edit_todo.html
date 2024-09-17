@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Пора-пора меняться!
+{% endblock %}
+
+{% block body %}
+	<h1>Может поменяем планы на 180 градусов?</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Сохранить</button>
+  </form>
+{% endblock %}
