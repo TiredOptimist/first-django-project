@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 from registration.models import NewUser
 
 
@@ -19,6 +20,7 @@ class ToDoItem(models.Model):
     done = models.BooleanField(default=False)
     description = models.CharField(max_length=250, default="")
     user = models.ForeignKey(NewUser, on_delete=models.CASCADE, default=get_sentinel_user_id)
+    created_at = models.DateField(default=timezone.now)
 
     def __str__(self):
         return self.title

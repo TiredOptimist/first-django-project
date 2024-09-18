@@ -24,6 +24,9 @@
             {% csrf_token %}
             <input type="hidden" name="done" value="on">
           </form>
+          <div class="object_in_info">Создано: 
+          <div class="object">{{ todo_item.created_at }}</div>
+          </div>
           {% if todo_item.id %}
           <p class="card-text">{{ todo_item.description }}</p>
           {% endif %}
