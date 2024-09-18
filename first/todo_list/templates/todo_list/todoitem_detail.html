@@ -15,25 +15,27 @@
   </div>
 
   <div class="object_in_info">Комментарий: 
-    <div class="object">{{ object.description }}</div>
-  </div>
+    <div class="object">{{ object.description }}
+      <button class="btn-edit" form="edit-form-{{ object.id }}" type="submit" id="btn_edit_card"><i class='fa fa-pencil'></i>
 
-  <div class="object_in_info">
-  <button form="edit-form-{{ object.id }}" type="submit" id="btn_edit_card">Изменить описание</button>
-  <form id="edit-form-{{ object.id }}" action="{% url 'todo_list:edit_todo' pk=object.id %}" method="post">
-    {% csrf_token %}
-  </form>
-  </div>
-
-    <div class="object_in_info">Статус:
-      <div class="object">
-        {% if object.done %}
-      	Сделано!
-      {% else %}
-        Ой, дружок, пора взяться за дело!
-      {% endif %} 
-      </div>
+        <form id="edit-form-{{ object.id }}" action="{% url 'todo_list:edit_todo' pk=object.id %}" method="post">
+          {% csrf_token %}
+        </form>
+        <!-- сделать иконку рядом с комментарием, возможно сделать отдельный див -->
+      </button>
     </div>
+  </div>
+
+
+  <div class="object_in_info">Статус:
+    <div class="object">
+      {% if object.done %}
+      Сделано!
+    {% else %}
+      Ой, дружок, пора взяться за дело!
+    {% endif %} 
+    </div>
+  </div>
 </div>
 
 <div class="prev-div">

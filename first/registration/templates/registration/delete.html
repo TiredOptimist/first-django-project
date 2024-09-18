@@ -6,11 +6,21 @@
 {% endblock title %}
 
 {% block body %}
-  <h1>Вы уверены, что хотите удалить свой аккаунт?</h1>
-  <form method="post">
-    {% csrf_token %}
-    <button type="submit">Удалить аккаунт</button>
-  </form>
+  <div class="container-profile">
+    {% include 'registration/components/navbar.html' %}
+
+
+    <div class="container-profile-info" id="delete">
+      <h3 class="container-profile-info-title">Вы уверены, что хотите удалить свой аккаунт?</h3>
+
+      <form method="post" class="form__delete">
+        {% csrf_token %}
+        <button type="submit" class="delete__link">Удалить аккаунт</button>
+      </form>
+
+    </div>
+
+  
   
 <script src="{% static 'main.js' %}"></script>
 {% endblock body %}

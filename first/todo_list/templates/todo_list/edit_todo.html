@@ -5,10 +5,12 @@
 {% endblock %}
 
 {% block body %}
-	<h1>Может поменяем планы на 180 градусов?</h1>
-  <form method="post">
+<div class="mb-4 detail">
+  <h1>Может поменяем планы на 180 градусов?</h1>
+  <form method="post" class="edit_desc">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Сохранить</button>
+    <button type="submit" class="password-btn">Сохранить</button>
   </form>
+</div>
 {% endblock %}

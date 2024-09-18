@@ -456,6 +456,7 @@ body{
     font-size: 20px;
     font-weight: 400;
     padding-top: 3px;
+    width: max-content;
     color: var(--main-font-color);
 }
 
@@ -464,6 +465,31 @@ body{
     margin-right: 10px;
     font-weight: 700;
     color: var(--main-font-color);
+}
+
+.btn-edit{
+    border: none;
+    font-size: 10px;
+    position: absolute;
+    width: max-content;
+}
+
+.btn-edit i{
+    font-size: 20px;
+}
+
+.edit_desc input{
+    background-color: var(--form-control);
+    border-radius: 4px;
+    height: 40px;
+    max-width: 300px;
+    color: var(--main-font-color);
+    border: none;
+    transition: all 100ms ease-in-out;
+}
+
+.edit_desc input:focus{
+    border: 1px solid var(--primary);
 }
 
 /* какая та непонятная ссылка*/
@@ -661,7 +687,8 @@ body{
     background-color: rgba(255, 255, 255, 0.03);
     padding: 30px 10px;
     border-radius: 10px;
-    height: 500px;
+    min-height: 500px;
+
 }
 
 .dis-active{
@@ -689,6 +716,10 @@ body{
 .container-settings-navbar li:first-child{
     padding-top: 0px;
     padding-bottom: 20px;
+}
+
+.container-settings-navbar li:last-child{
+    padding-bottom: 0px;
 }
 
 .container-settings-navbar li a{
@@ -735,7 +766,7 @@ body{
     background-color: rgba(255, 255, 255, 0.03);
     border-radius: 10px;
     padding: 15px 40px;
-    height: 500px;
+    min-height: 500px;
 }
 
 /* profile:information */
@@ -934,6 +965,59 @@ body{
 .update-cont p input:focus{
     outline: none;
     border: 2px solid var(--primary);
+}
+
+.delete__link{
+    background-color: var(--reg-btn-back);
+    width: max-content;
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin: 10px 0px;
+    border: none;
+}
+
+.delete__link a{
+    text-decoration: none;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: var(--reg-back);
+}
+
+.form__delete{
+
+}
+
+.btn_del-account{
+    color: var(--main-font-color);
+    background-color: #f60000;
+    border-radius: 5px;
+    border: none;
+    padding: 5px 10px;
+}
+
+.delete_container{
+    padding-top: 30px;
+}
+
+.delete_container h1{
+    color: var(--main-font-color);
+}
+
+.delete_container a{
+    color: var(--primary);
+    text-decoration: none;
+    transition: all 200ms ease-in-out;
+}
+
+.delete_container a:hover{
+    text-decoration: underline;
+    color: var(--btn-hover);
+}
+
+.delete_container h2{
+    color: var(--nav-font);
 }
 
 /* reset password*/
