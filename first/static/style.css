@@ -120,9 +120,12 @@ body{
     font-weight: 700;
 }
 
+#form #btn{
+    padding: 8px 26px;
+}
+
 #btn{
     background-color: var(--primary);
-    padding: 10px 57px;
     color: var(--btn-font);
     display: inline-block;
     justify-content: center;
@@ -140,7 +143,9 @@ body{
 
 #btn a{
     text-decoration: none;
-    color: var(--btn-font)
+    color: var(--btn-font);
+    display: inline-block;
+    padding: 10px 50px;
 }
 
 .prev a{
@@ -472,25 +477,66 @@ body{
     font-size: 10px;
     position: absolute;
     width: max-content;
+    background: transparent;
+}
+
+.object_in_info--title{
+    width: max-content;
+    position: relative;
 }
 
 .btn-edit i{
     font-size: 20px;
+    color: var(--main-font-color);
+    margin-left: 5px;
+    position: relative;
+    transition: all 200ms ease-in-out ;
+
 }
+
+.btn-edit i:hover{
+    color: var(--primary);
+    transform: scale(1.01);
+}
+
+.edit-cont h1{
+    color: var(--main-font-color);
+}
+
+.edit-cont h1 span{
+    color: var(--primary);
+    display: inline-block;
+    transition: all 650ms ease-in-out;
+    padding: 3px 0px;
+}
+
+
+
+.edit-cont h1 span:hover{
+    transform: rotate(-180deg);
+}
+
 
 .edit_desc input{
     background-color: var(--form-control);
     border-radius: 4px;
     height: 40px;
-    max-width: 300px;
+    width: 100%;
+    max-width: 250px;
     color: var(--main-font-color);
     border: none;
     transition: all 100ms ease-in-out;
+    padding-left: 5px;
 }
 
 .edit_desc input:focus{
     border: 1px solid var(--primary);
 }
+
+.edit_desc p label{
+    color: var(--main-font-color);
+}
+
 
 /* какая та непонятная ссылка*/
 
@@ -590,6 +636,10 @@ body{
 
 .form-group-reg{
     width: 100%;
+}
+
+.form-group-reg .errorlist li{
+    top: 0px
 }
 
 .form-group-reg input{
@@ -767,6 +817,7 @@ body{
     border-radius: 10px;
     padding: 15px 40px;
     min-height: 500px;
+    position: relative;
 }
 
 /* profile:information */
@@ -838,8 +889,13 @@ body{
 	overflow: hidden;
     border: 1px solid #626262;
 	position: relative;
-    box-shadow: 1px 1px 7px #000 ;
+    box-shadow: 1px 1px 7px var(--navbar-shadow) ;
     cursor: pointer;
+    transition: all 100ms ease-in-out;
+}
+
+.card-theme:hover{
+    box-shadow: 1px 1px 20px var(--navbar-shadow);
 }
 
 .card-image-theme{
@@ -943,6 +999,7 @@ body{
 
 .update-cont{
     color: var(--main-font-color);
+    position: relative;
 }
 
 .update-cont p label{
@@ -968,13 +1025,20 @@ body{
 }
 
 .delete__link{
-    background-color: var(--reg-btn-back);
     width: max-content;
-    padding: 8px 15px;
-    border-radius: 5px;
+    position: absolute;
     margin: 10px 0px;
-    border: none;
+
 }
+
+#delete-btn{
+    border-radius: 3px;
+    padding: 5px 10px;
+    border: 1px solid #f60000;
+    color: #f60000;
+    background-color: var(--cont-bio);
+}
+
 
 .delete__link a{
     text-decoration: none;
@@ -982,12 +1046,9 @@ body{
     display: flex;
     justify-content: center;
     text-align: center;
-    color: var(--reg-back);
+    color: #f60000;
 }
 
-.form__delete{
-
-}
 
 .btn_del-account{
     color: var(--main-font-color);

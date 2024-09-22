@@ -18,15 +18,20 @@
     <div class="object">{{ object.created_at }}</div>
    </div>
 
-  <div class="object_in_info">Комментарий: 
-    <div class="object">{{ object.description }}
-      <button class="btn-edit" form="edit-form-{{ object.id }}" type="submit" id="btn_edit_card"><i class='fa fa-pencil'></i>
+  <div class="object_in_info">
+    <div class="object_in_info--title" style="display: inline-block;">
+      Комментарий<button class="btn-edit" form="edit-form-{{ object.id }}" type="submit" id="btn_edit_card"><i class='fa fa-pencil'></i>
 
         <form id="edit-form-{{ object.id }}" action="{% url 'todo_list:edit_todo' pk=object.id %}" method="post">
           {% csrf_token %}
         </form>
-        <!-- сделать иконку рядом с комментарием, возможно сделать отдельный див -->
-      </button>
+      </button> <span style="padding-left: 28px;">:</span>
+
+    </div>
+
+
+    <div class="object">{{ object.description }}
+
     </div>
   </div>
 

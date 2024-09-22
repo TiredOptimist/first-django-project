@@ -5,12 +5,15 @@
 {% endblock %}
 
 {% block body %}
-<div class="mb-4 detail">
-  <h1>Может поменяем планы на 180 градусов?</h1>
+<div class="mb-4 detail edit-cont">
+  <h1>Может поменяем планы на <span>180 градусов?</span></h1>
   <form method="post" class="edit_desc">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit" class="password-btn">Сохранить</button>
   </form>
+  <div class="prev mt-4">
+    <a class="m-2" href="{% url 'todo_list:index' %}">Назад</a>
+  </div>
 </div>
 {% endblock %}
