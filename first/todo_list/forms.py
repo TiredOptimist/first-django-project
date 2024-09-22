@@ -6,7 +6,7 @@ from .models import ToDoItem
 class ToDoItemForm(forms.ModelForm):
     class Meta:
         model = ToDoItem
-        fields = ['title', 'description']
+        fields = ['title', 'description', 'deadline']
 
     description = forms.CharField(required=False)
 
@@ -14,4 +14,4 @@ class ToDoItemForm(forms.ModelForm):
 class UpdateCardForm(forms.ModelForm):
     class Meta:
         model = ToDoItem
-        fields = ('description',)
+        fields = ('description', 'deadline')

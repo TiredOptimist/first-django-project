@@ -21,6 +21,7 @@ class ToDoItem(models.Model):
     description = models.CharField(max_length=250, default="")
     user = models.ForeignKey(NewUser, on_delete=models.CASCADE, default=get_sentinel_user_id)
     created_at = models.DateField(default=timezone.now)
+    deadline = models.DateField(blank=True, null=True)
 
     def __str__(self):
         return self.title

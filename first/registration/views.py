@@ -1,3 +1,4 @@
+from django.db.models import Q, Count
 from django.shortcuts import render, redirect
 from django.views.generic import FormView, DeleteView
 from django.contrib.auth.decorators import login_required
@@ -8,7 +9,6 @@ from django.urls import reverse_lazy
 from django.views.decorators.http import require_http_methods
 from django.contrib.auth.views import PasswordChangeView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.db.models import Count, Q
 from registration.models import NewUser
 from todo_list.models import ToDoItem
 
@@ -97,4 +97,5 @@ class DeleteUserView(DeleteView, LoginRequiredMixin):
 
     def get_object(self, queryset=None):
         return self.request.user
+
 
