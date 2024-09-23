@@ -1,10 +1,23 @@
+
 {% load static %}
 <div class="cont">
   <div class="row">
     {% for todo_item in object_list %}
     <div class="col-2 card-column">
       <div class="card">
-        <img src="{% static 'img/todo.jpg' %}" alt="" class="card-img-top">
+        
+        <div class="card__img">
+          <img src="{% static 'img/todo.jpg' %}" alt="" class="card-img-top">
+          <div class="card_data">
+            <div class="object_in_info cont_data_card">
+              <div class="object data_card"><h3>От: {{ todo_item.created_at }}</h3></div>
+            </div>
+            <div class="object_in_info cont_data_card">
+              <div class="object data_card"><h3>До: {{ todo_item.deadline }}</h3></div>
+            </div>    
+          </div>    
+        </div>  
+
         <form action="{% url 'todo_list:delete_todo' todo_item.id %}" id="form" method="post">
           {% csrf_token %}
           <button type="submit" id="btn_delete"><i class="fa fa-close"></i></button>
@@ -17,6 +30,7 @@
         {% endif %}
         </button>
         <div class="card-body">
+          
           <a href="{% url 'todo_list:detail' pk=todo_item.pk %}">
             {{ todo_item.title }}
           </a>
@@ -24,12 +38,7 @@
             {% csrf_token %}
             <input type="hidden" name="done" value="on">
           </form>
-          <div class="object_in_info">От: 
-          <div class="object">{{ todo_item.created_at }}</div>
-          </div>
-          <div class="object_in_info">До: 
-          <div class="object">{{ todo_item.deadline }}</div>
-          </div>
+          
           {% if todo_item.id %}
           <p class="card-text">{{ todo_item.description }}</p>
           {% endif %}
