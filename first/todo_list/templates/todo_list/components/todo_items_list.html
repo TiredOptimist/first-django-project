@@ -5,17 +5,8 @@
     {% for todo_item in object_list %}
     <div class="col-2 card-column">
       <div class="card">
-        
         <div class="card__img">
-          <img src="{% static 'img/todo.jpg' %}" alt="" class="card-img-top">
-          <div class="card_data">
-            <div class="object_in_info cont_data_card">
-              <div class="object data_card"><h3>От: {{ todo_item.created_at }}</h3></div>
-            </div>
-            <div class="object_in_info cont_data_card">
-              <div class="object data_card"><h3>До: {{ todo_item.deadline }}</h3></div>
-            </div>    
-          </div>    
+          <img src="{% static 'img/todo.jpg' %}" alt="" class="card-img-top">  
         </div>  
 
         <form action="{% url 'todo_list:delete_todo' todo_item.id %}" id="form" method="post">
@@ -41,6 +32,17 @@
           
           {% if todo_item.id %}
           <p class="card-text">{{ todo_item.description }}</p>
+
+          <div class="card_data">
+
+            <div class="object_in_info cont_data_card">
+              <div class="object data_card"><h3>От: {{ todo_item.created_at }}</h3></div>
+            </div>
+
+            <div class="object_in_info cont_data_card">
+              <div class="object data_card"><h3>До: {{ todo_item.deadline }}</h3></div>
+            </div>    
+          </div>
           {% endif %}
         </div>
       </div>
